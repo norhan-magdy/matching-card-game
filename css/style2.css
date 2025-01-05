@@ -30,32 +30,45 @@ body{
 background-color: #F8BBD0;
 }
 
-.header{
+.header {
     text-align: center;
-    border: 1px solid #5980ab;
-    background-color:  #65c7bf;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 130px;
-    margin-right: 130px;
-    border-radius: 15px;
-   
+    padding-top: 5px;
+    background: linear-gradient(45deg, rgb(14, 222, 222), rgb(218, 123, 139), yellow); /* Gradient mix */
+    -webkit-background-clip: text; /* Clip the gradient to the text */
+    -webkit-text-fill-color: transparent; /* Make the text transparent to show the gradient */
+    font-size: 1.2rem; /* Adjust font size if necessary */
+     /* Make the header text bold */
 }
-.header :first-child{
-    color: #f74c88d9;
+
+/* .header :first-child{
+    color: #0f7367d9;
+} */
+.full-card {
+    background-color: #ebdae0;
+    margin: 20px auto; /* Center the card horizontally */
+    padding: 20px; /* Adjust padding for content */
+    border-radius: 20px;
+    max-width: 400px; /* Set a maximum width for the card */
+    max-height: auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
+
 .card-body{
     display: flex;
     /* flex-direction: column; */
     /* border: 1px solid #cbcbcb; */
+    /* border: 3px solid #F8BBD0; */
     align-items: center;
+    
+    /* background-color: #dbf1f0; */
     justify-content: center;
     gap: 20px;
-    background-color: linear-gradient(to bottom,#46ACA3 ,#18615b);;
-    margin-right: 100px;
+    /* padding-right: -200px; */
+    background-color: linear-gradient(to bottom,#46ACA3 ,#18615b);
+    /* margin-right: 100px;
     margin-left: 100px;
     margin-bottom: 50px;
-    border-radius: 15px;
+    border-radius: 15px; */
     /* box-shadow: 4px 8px #ea96b43c ; */
     
 }
@@ -63,8 +76,8 @@ background-color: #F8BBD0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 3px solid #F8BBD0;
-    margin: 5px;
+    /* border: 3px solid #F8BBD0; */
+    /* margin: 5px; */
     border-radius: 15px;
     padding: 10px;
     
@@ -75,27 +88,33 @@ img{
     height: 100px;
 }
 .first-instruction:first-child{
-    color: #eb5287;
+     /* Gradient mix */
+     background: linear-gradient(45deg, rgb(46, 160, 160), #a51830,yellow);
+    -webkit-background-clip: text; /* Clip the gradient to the text */
+    -webkit-text-fill-color: transparent;;
 }
 span{
     font-size: 50px;
-    color: #eb5287;
+    color: #0f7367d9;
 }
 .seconed-instruction{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 3px solid #F8BBD0;
-    margin: 5px;
-    border-radius: 15px;
-    padding: 10px;
+    /* border: 3px solid #F8BBD0; */
+    /* margin: 5px; */
+    /* border-radius: 15px;
+    padding: 10px; */
 
 }
 .seconed-instruction>h2 {
-    color: #eb5287;
+    background: linear-gradient(45deg, rgb(46, 160, 160), rgb(197, 71, 92));
+    /* Gradient mix */
+    -webkit-background-clip: text; /* Clip the gradient to the text */
+    -webkit-text-fill-color: transparent;;
 }
 .seconed-instruction>h3 {
-    color: #eb5287;
+    color: #0f7367d9;
 }
 
 
