@@ -1,0 +1,150 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+@media (max-width: 600px) {
+    .card-body {
+        
+        flex-direction: column;
+        justify-content: space-between;
+
+    }
+    .first-instruction,
+    .seconed-instruction {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    img {
+        width: 80px;
+        height: 80px;
+    }
+    span {
+        font-size: 40px;
+    }
+}
+
+
+body{
+background-color: #F8BBD0;
+}
+
+.header{
+    text-align: center;
+    border: 1px solid #5980ab;
+    background-color:  #65c7bf;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 130px;
+    margin-right: 130px;
+    border-radius: 15px;
+   
+}
+.header :first-child{
+    color: #f74c88d9;
+}
+.card-body{
+    display: flex;
+    /* flex-direction: column; */
+    /* border: 1px solid #cbcbcb; */
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: linear-gradient(to bottom,#46ACA3 ,#18615b);;
+    margin-right: 100px;
+    margin-left: 100px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    /* box-shadow: 4px 8px #ea96b43c ; */
+    
+}
+.first-instruction{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid #F8BBD0;
+    margin: 5px;
+    border-radius: 15px;
+    padding: 10px;
+    
+}
+img{
+    border-radius: 20px;
+    width:100px ;
+    height: 100px;
+}
+.first-instruction:first-child{
+    color: #eb5287;
+}
+span{
+    font-size: 50px;
+    color: #eb5287;
+}
+.seconed-instruction{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid #F8BBD0;
+    margin: 5px;
+    border-radius: 15px;
+    padding: 10px;
+
+}
+.seconed-instruction>h2 {
+    color: #eb5287;
+}
+.seconed-instruction>h3 {
+    color: #eb5287;
+}
+
+
+/* animated background */
+/* Bubble container (covers the entire page) */
+.bubbles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Keep it behind all other content */
+    overflow: hidden;
+    background: linear-gradient(to bottom, #F8BBD0, #46ACA3); /* Pink and cyan gradient */
+}
+
+/* Style individual bubbles */
+.bubbles span {
+    position: absolute;
+    bottom: -100px; /* Start below the viewport */
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.5); /* Light semi-transparent bubbles */
+    border-radius: 50%;
+    animation: rise 8s infinite ease-in-out;
+    animation-delay: calc(-1s * var(--i)); /* Different start times */
+}
+
+/* Animation for bubbles */
+@keyframes rise {
+    0% {
+        transform: translateY(0) scale(1); /* Start at the bottom, normal size */
+    }
+    50% {
+        transform: translateY(-50vh) scale(1.2); /* Rise halfway and slightly grow */
+    }
+    100% {
+        transform: translateY(-100vh) scale(0.8); /* Disappear at the top */
+        opacity: 0;
+    }
+}
+
+/* Create different sizes and positions */
+.bubbles span:nth-child(1) { left: 10%; width: 15px; height: 15px; background-color: #F8BBD0; --i: 0; }
+.bubbles span:nth-child(2) { left: 20%; width: 25px; height: 25px; background-color: #46ACA3; --i: 1; }
+.bubbles span:nth-child(3) { left: 30%; width: 10px; height: 10px; background-color: #F8BBD0; --i: 2; }
+.bubbles span:nth-child(4) { left: 40%; width: 20px; height: 20px; background-color: #46ACA3; --i: 3; }
+.bubbles span:nth-child(5) { left: 50%; width: 30px; height: 30px; background-color: #F8BBD0; --i: 4; }
+.bubbles span:nth-child(6) { left: 60%; width: 12px; height: 12px; background-color: #46ACA3; --i: 5; }
+.bubbles span:nth-child(7) { left: 70%; width: 18px; height: 18px; background-color: #F8BBD0; --i: 6; }
+.bubbles span:nth-child(8) { left: 80%; width: 22px; height: 22px; background-color: #46ACA3; --i: 7; }
+.bubbles span:nth-child(9) { left: 90%; width: 25px; height: 25px; background-color: #F8BBD0; --i: 8; }
