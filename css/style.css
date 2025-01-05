@@ -6,7 +6,8 @@
 }
 :root {
   --background-main-color: #d79cb3;
-  --panel-color: #f7f3f0;
+  /* --panel-color: #f7f3f0; */
+  --panel-color: #d59fb2;
   --custom-pink-color: #f69da9;
   --custom-cyan-color: #49c8d8;
 }
