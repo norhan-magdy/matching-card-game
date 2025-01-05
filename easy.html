@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>matching game</title>
+    <link rel="stylesheet" href="css/easy.css">
+</head>
+<body>
+    <div class="bubbles"></div>
+    <header>
+        <span>
+            <a href="easy.html">
+                <img src="images/ace-of-hearts.png" alt="Logo" class="logo">
+                Match It
+            </a>
+        </span>
+        </nav>
+	</header>
+    
+    <div class="info-container">
+        <div class="name">
+            Hello:<span></span>
+        </div>
+        <div class="tries"></div>
+        wrong tries: <span>0</span>
+    </div>
+    <div class="memory-game-blocks">
+        <div class="game-block " data-technology="apple">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/3137044.png" alt="apple">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="apple">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/3137044.png" alt="flower">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="moon">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/moon.png" alt="moon">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="moon">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/moon.png" alt="moon">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="girl">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/girl.png" alt="girl">
+            </div>
+        </div>
+        <div class="game-block"  data-technology="girl">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/girl.png" alt="girl">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="leaf">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/leaf.png" alt="leaf">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="leaf">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/leaf.png" alt="leaf">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="record">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/record.png" alt="record">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="record">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/record.png" alt="record">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="boy">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/boy.png" alt="boy">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="boy">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/boy.png" alt="boy">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="star">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/star.png" alt="star">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="star">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/star.png" alt="star">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="sun">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/sun.png" alt="sun">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="sun">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/sun.png" alt="sun">
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        const bubbleContainer = document.querySelector('.bubbles');
+        for (let i = 0; i < 300; i++) {
+            const bubble = document.createElement('span');
+            bubble.style.setProperty('--i', i % 10); // Variable for animation delay
+            bubbleContainer.appendChild(bubble);
+        }
+    </script>
+</body>
+
+</html> 

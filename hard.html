@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>matching game</title>
+    <link rel="stylesheet" href="/css/hard.css">
+</head>
+<body>
+    <div class="bubbles"></div>
+    <header>
+        <span>
+            <a href="hard.html">
+                <img src="images/ace-of-hearts.png" alt="Logo" class="logo">
+                Match It
+            </a>
+        </span>
+        </nav>
+	</header>
+    
+    <div class="info-container">
+        <div class="name">
+            Hello:<span></span>
+        </div>
+        <div class="tries"></div>
+        wrong tries: <span>0</span>
+    </div>
+    <div class="memory-game-blocks">
+        <div class="game-block " data-technology="cartoon">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/cartoon.png" alt="cartoon">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="cartoon">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/cartoon.png" alt="cartoon">
+            </div>
+        </div>
+        <div class="game-block " data-technology="japanese">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/japanese.png" alt="japanese">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="japanese">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/japanese.png" alt="japanese">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="naruto">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/naruto.png" alt="naruto">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="naruto">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/naruto.png" alt="naruto">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="wu-kong">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/wu-kong.png" alt="wu-kong">
+            </div>
+        </div>
+        <div class="game-block"  data-technology="wu-kong">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/wu-kong.png" alt="wu-kong">
+            </div>
+        </div>
+        <div class="game-block " data-technology="sailor">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/sailor.png" alt="sailor">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="sailor">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/sailor.png" alt="sailor">
+            </div>
+        </div>
+        <div class="game-block " data-technology="ninja">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/ninja.png" alt="ninja">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="ninja">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/ninja.png" alt="ninja">
+            </div>
+        </div>
+        <div class="game-block " data-technology="ninja-1">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/ninja-1.png" alt="ninja-1">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="ninja-1">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/ninja-1.png" alt="ninja-1">
+            </div>
+        </div>
+        <div class="game-block " data-technology="killer">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/killer.png" alt="killer">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="killer">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/killer.png" alt="killer">
+            </div>
+        </div>
+        <div class="game-block " data-technology="cat">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/cat.png" alt="cat">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="cat">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/cat.png" alt="cat">
+            </div>
+        </div>
+        <div class="game-block " data-technology="leonardo">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/leonardo.png" alt="leonardo">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="leonardo">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/leonardo.png" alt="leonardo">
+            </div>
+        </div>
+        <div class="game-block " data-technology="face">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/face.png" alt="face">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="face">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/face.png" alt="face">
+            </div>
+        </div>
+        <div class="game-block " data-technology="alien">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/alien.png" alt="alien">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="alien">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/alien.png" alt="alien">
+            </div>
+        </div>
+        <div class="game-block " data-technology="banana">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/banana.png" alt="banana">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="banana">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/banana.png" alt="banana">
+            </div>
+        </div>
+        <div class="game-block " data-technology="nut">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/nut.png" alt="nut">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="nut">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/nut.png" alt="nut">
+            </div>
+        </div>
+        <div class="game-block " data-technology="strawberry">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/strawberry.png" alt="strawberry">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="strawberry">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/strawberry.png" alt="strawberry">
+            </div>
+        </div>
+        <div class="game-block " data-technology="watermelon">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/watermelon.png" alt="watermelon">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="watermelon">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/watermelon.png" alt="watermelon">
+            </div>
+        </div>
+        <div class="game-block " data-technology="zombie">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/zombie.png" alt="zombie">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="zombie">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/zombie.png" alt="zombie">
+            </div>
+        </div>
+        
+        <div class="game-block "  data-technology="monster2">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/monster2.png" alt="monster2">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="monster2">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/monster2.png" alt="monster2">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="monster">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/monster.png" alt="monster">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="monster">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/monster.png" alt="monster">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="witch">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/witch.png" alt="witch">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="witch">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/witch.png" alt="witch">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="manga">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/manga.png" alt="manga">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="manga">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/manga.png" alt="manga">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="i-dont-know">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/i-dont-know.png" alt="i-dont-know">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="i-dont-know">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/i-dont-know.png" alt="i-dont-know">
+            </div>
+        </div>
+        <div class="game-block " data-technology="horror-movie">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/horror-movie.png" alt="horror-movie">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="horror-movie">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/horror-movie.png" alt="horror-movie">
+            </div>
+        </div>
+        <div class="game-block " data-technology="ghost-1">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/ghost-1.png" alt="ghost-1">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="ghost-1">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/ghost-1.png" alt="ghost-1">
+            </div>
+        </div>
+        <div class="game-block " data-technology="ghost-boy">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/ghost-boy.png" alt="ghost-boy">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="ghost-boy">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/ghost-boy.png" alt="ghost-boy">
+            </div>
+        </div>
+        <div class="game-block " data-technology="bat">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/bat.png" alt="bat">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="bat">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/bat.png" alt="bat">
+            </div>
+        </div>
+        <div class="game-block " data-technology="dragon">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/dragon.png" alt="dragon">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="dragon">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/dragon.png" alt="dragon">
+            </div>
+        </div>
+        <div class="game-block " data-technology="scary">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/scary-alien.png" alt="scary">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="scary">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/scary-alien.png" alt="scary">
+            </div>
+        </div>
+        <div class="game-block " data-technology="witch-2">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/witch-2.png" alt="witch-2">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="witch-2">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/witch-2.png" alt="witch-2">
+            </div>
+        </div>
+        <div class="game-block " data-technology="lll">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/lll.png" alt="lll">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="lll">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/lll.png" alt="lll">
+            </div>
+        </div>
+        <div class="game-block " data-technology="fff">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/fff.png" alt="fff">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="fff">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/fff.png" alt="fff">
+            </div>
+        </div>
+        <div class="game-block " data-technology="sss">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/sss.png" alt="sss">
+            </div>
+        </div>
+        <div class="game-block "  data-technology="sss">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="images/sss.png" alt="sss">
+            </div>
+        </div>
+    </div>
+    <script>
+        const bubbleContainer = document.querySelector('.bubbles');
+        for (let i = 0; i < 300; i++) {
+            const bubble = document.createElement('span');
+            bubble.style.setProperty('--i', i % 10); // Variable for animation delay
+            bubbleContainer.appendChild(bubble);
+        }
+    </script>
+</body>
+
+</html> 
