@@ -90,8 +90,6 @@ blocksContainer.classList.remove('no-clicking');
 
 }
 
-
-
 //check matching blocks
 // Check matching blocks
 function checkMatchingBlocks(firstBlock, secondBlock) {
