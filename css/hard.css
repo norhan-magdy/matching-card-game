@@ -10,12 +10,6 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
-/* html, body {
-    height: 100%;
-    font-family: 'Arial', sans-serif;
-    background-color: #ffe6f0; /* Light pink background */
-    /* color: #605e5e; */
-
 
 span {
     font-family: 'Wendy One', sans-serif;
@@ -28,7 +22,6 @@ span {
     margin-right: 5px;
     border-radius: 40%;
 }
-
 a {
     font-family: 'Wendy One', sans-serif;
     text-decoration: none;
@@ -38,6 +31,21 @@ a {
     display: inline-block;
     font-size: 24px;
 }
+
+.Reset > a
+{
+all:unset;
+color: #ff69b4;
+font-size: 24px;
+font-weight: bold;
+cursor: pointer; 
+width: 50px;
+height: 50px;
+border-radius: 10%;
+transition: color 0.3s;
+
+}
+
 
 /* Info Container */
 .info-container {
@@ -55,28 +63,40 @@ a {
     align-items: center;
 }
 
-.info-container .name span,
-.info-container .tries span {
-    font-weight: bold;
-    color: #ff85a2;
-}
-
-.info-container .name {
-    font-size: 20px;
-}
 
 .info-container .tries {
-    font-size: 20px;
+    font-size: 24px;
+    font-style: italic;
+    color: #ff69b4;
+        font-weight: bold;
+        margin-top: 10px;
+        display: flex;
 }
+
+.info-container .time {
+    font-size: 24px;
+    font-style: italic;
+    color: #ff69b4;
+        font-weight: bold;
+        margin-top: 10px;
+      
+  
+}
+
 
 /* Memory Game Blocks */
 .memory-game-blocks {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     gap: 5px;
-    max-width: 725px;
+    max-width: 700px;
     margin: 20px auto;
     padding: 10px;
+}
+/* الحته اللي تبع فانكشن ال ستوب */
+.memory-game-blocks.no-clicking
+{
+    pointer-events: none;
 }
 
 .memory-game-blocks .game-block {
@@ -118,10 +138,21 @@ a {
     background-color: #ffc4d6;
     transform: rotateY(180deg);
 }
-
-.memory-game-blocks .game-block.is-flipped {
+/*الحته اللي تبع فانكشن ال ماتشيب */
+.memory-game-blocks .game-block.is-flipped 
+/*, .memory-game-blocks .game-block.has-match  */
+{
+    -webkit-transform: rotateY(180deg);
+    -moz-transform:rotateY(180deg) ;
     transform: rotateY(180deg);
 }
+
+.memory-game-blocks .game-block.has-match 
+{
+    transform: rotateY(180deg);
+    pointer-events: none;
+}
+
 
 .memory-game-blocks .game-block img {
     width: 80%;

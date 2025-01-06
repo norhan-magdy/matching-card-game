@@ -6,7 +6,7 @@ for (let i = 0; i < 300; i++) {
     bubbleContainer.appendChild(bubble);
 }
 
-let deuration=1000;
+let deuration=700;
 
 let blocksContainer = document.querySelector(".memory-game-blocks")
 

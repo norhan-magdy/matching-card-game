@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>matching game</title>
     <link rel="stylesheet" href="css/intermadiate.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
 </head>
 <body>
     <div class="bubbles"></div>
@@ -19,11 +21,13 @@
 	</header>
     
     <div class="info-container">
-        <div class="name">
-            Hello:<span></span>
+        <div class="time">
+            <p> Game Time:</p>
         </div>
-        <div class="tries"></div>
-        wrong tries: <span>0</span>
+        <div class="tries">
+           <p> wrong tries:</p><span>0</span>
+    </div>
+    <div class="Reset"><a href="intermediate.html"> Reset </a><a href="intermediate.html"><i id="resetIcon" class="fas fa-redo-alt"></i></a></div>
     </div>
     <div class="memory-game-blocks">
         <div class="game-block " data-technology="shield">
@@ -243,14 +247,7 @@
             </div>
         </div>
     </div>
-    <script>
-        const bubbleContainer = document.querySelector('.bubbles');
-        for (let i = 0; i < 300; i++) {
-            const bubble = document.createElement('span');
-            bubble.style.setProperty('--i', i % 10); // Variable for animation delay
-            bubbleContainer.appendChild(bubble);
-        }
-    </script>
+    <script src="js/game.js"></script>
 </body>
 
 </html> 
