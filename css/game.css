@@ -83,11 +83,19 @@ transition: color 0.3s;
   
 }
 
-
+.block4{
+    grid-template-columns: repeat(4, 1fr);
+}
+.block6{
+    grid-template-columns: repeat(6, 1fr);
+}
+.block8{
+    grid-template-columns: repeat(8, 1fr);
+}
 /* Memory Game Blocks */
 .memory-game-blocks {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    /* grid-template-columns: repeat(8, 1fr); */
     gap: 5px;
     max-width: 700px;
     margin: 20px auto;
