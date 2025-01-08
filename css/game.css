@@ -82,7 +82,9 @@ transition: color 0.3s;
     align-items: center; /* محاذاة عموديًا */
     gap: 5px; /* مسافة صغيرة بين الأيقونة والنص */
 }
-
+.tries >span{
+    font-size: 18px;
+}
 .Reset > a {
     all: unset; /* إزالة جميع الأنماط الافتراضية */
     color: #ff69b4;
@@ -352,3 +354,14 @@ transition: color 0.3s;
 .bubbles span:nth-child(7) { left: 70%; width: 18px; height: 18px; background-color: #F8BBD0; --i: 6; }
 .bubbles span:nth-child(8) { left: 80%; width: 22px; height: 22px; background-color: #46ACA3; --i: 7; }
 .bubbles span:nth-child(9) { left: 90%; width: 25px; height: 25px; background-color: #F8BBD0; --i: 8; }
+#winPopup {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  #winPopup.visible {
+    visibility: visible;
+    opacity: 1;
+  }
+  
