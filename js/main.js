@@ -64,3 +64,12 @@ bgSound.addEventListener("change", changeVolume);
 function changeVolume() {
   mySound.sound.volume = bgSound.value / 100;
 }
+
+const save = document.getElementById("save");
+
+save.addEventListener("click", () => {
+  console.log(mySound.sound);
+
+  // window.location.href = `${window.location.origin}/index.html`;
+  console.log(mySound.sound.volume);
+});
