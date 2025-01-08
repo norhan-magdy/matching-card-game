@@ -33,7 +33,6 @@ setInterval(createBubble, 350); // Create a bubble every 500ms
 const easy = document.getElementById("easy");
 const medium = document.getElementById("medium");
 const hard = document.getElementById("hard");
-
 const settings = document.getElementById("settings");
 const instruction = document.getElementById("instruction");
 
