@@ -17,8 +17,8 @@ span {
 }
 
 .logo {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     margin-right: 5px;
     border-radius: 40%;
 }
@@ -29,7 +29,7 @@ a {
     font-weight: bold;
     transition: color 0.3s;
     display: inline-block;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .Reset > a
@@ -49,39 +49,74 @@ transition: color 0.3s;
 
 /* Info Container */
 .info-container {
-    width: 100%;
-    max-width: 1100px;
-    margin: 20px auto;
+    width: calc(100% - 20px); /* العرض يعتمد على الشاشة مع تقليل الحواف */
+    max-width: 450px; /* أقصى عرض للحاوية */
+    margin: 10px auto; /* تمركز الحاوية في المنتصف */
     background-color: #fbeaf4;
-    padding: 20px;
-    font-size: 24px;
+    padding: 15px 20px; /* حواف داخلية مناسبة */
+    font-size: 18px; /* ضبط حجم النص */
     border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* تحسين الظل */
     border: 2px solid #ff85a2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* لجعل العناصر بجانب بعضها */
+    justify-content: space-between; /* توزيع العناصر بشكل متساوٍ */
+    align-items: center; /* محاذاة العناصر عموديًا */
+    gap: 10px; /* مسافة بين العناصر */
 }
 
-
-.info-container .tries {
-    font-size: 24px;
-    font-style: italic;
-    color: #ff69b4;
-        font-weight: bold;
-        margin-top: 10px;
-        display: flex;
-}
-
+/* عناصر الوقت والمحاولات */
+.info-container .tries,
 .info-container .time {
-    font-size: 24px;
+    font-size: 18px; /* حجم النص */
     font-style: italic;
     color: #ff69b4;
-        font-weight: bold;
-        margin-top: 10px;
-      
-  
+    font-weight: bold;
+    display: flex;
+    align-items: center; /* محاذاة النص والأيقونة عموديًا */
+    gap: 5px; /* مسافة صغيرة بين النص وأي أيقونة */
 }
+
+/* زر Reset */
+.Reset {
+    display: flex; /* جعل الأيقونة والنص بجانب بعض */
+    align-items: center; /* محاذاة عموديًا */
+    gap: 5px; /* مسافة صغيرة بين الأيقونة والنص */
+}
+
+.Reset > a {
+    all: unset; /* إزالة جميع الأنماط الافتراضية */
+    color: #ff69b4;
+    font-size: 18px; /* حجم النص للزر */
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-flex; /* عرض مرن لتوسيط النص والأيقونة */
+    padding: 5px 10px; /* تقليل الحواف الداخلية */
+    border-radius: 5px; /* استدارة الحواف */
+    border: 1px solid #ff69b4; /* إطار صغير */
+    text-align: center; /* توسيط النص */
+    transition: all 0.3s ease; /* تأثير التغيير */
+    background-color: transparent; /* خلفية شفافة افتراضيًا */
+}
+
+.Reset > a:hover {
+    color: white; /* لون النص عند التمرير */
+    background-color: #ff69b4; /* تغيير لون الخلفية عند التمرير */
+    border-color: #ff85a2; /* تغيير لون الإطار عند التمرير */
+}
+
+/* أيقونة Reset */
+.Reset .icon {
+    width: 16px; /* حجم الأيقونة */
+    height: 16px; /* حجم الأيقونة */
+    display: inline-block;
+}
+
+.Reset .icon img {
+    width: 100%; /* الأيقونة تتناسب مع الحاوية */
+    height: auto;
+    object-fit: contain; /* الحفاظ على نسبة العرض والارتفاع */
+}
+
 
 .block4{
     grid-template-columns: repeat(4, 1fr);
@@ -97,9 +132,9 @@ transition: color 0.3s;
     display: grid;
     /* grid-template-columns: repeat(8, 1fr); */
     gap: 5px;
-    max-width: 700px;
-    margin: 20px auto;
-    padding: 10px;
+    max-width: 450px;
+    margin: 10px auto;
+    padding: 5px;
 }
 /* الحته اللي تبع فانكشن ال ستوب */
 .memory-game-blocks.no-clicking
