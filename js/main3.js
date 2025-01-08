@@ -30,37 +30,25 @@ function createBubble() {
 
 setInterval(createBubble, 350); // Create a bubble every 500ms
 
-const bgSound = document.getElementById("background-music");
+const easy = document.getElementById("easy");
+const medium = document.getElementById("medium");
+const hard = document.getElementById("hard");
 
-function sound(src) {
-  this.sound = document.createElement("audio");
-  this.sound.src = src;
-  this.sound.style.display = "none";
-  document.body.appendChild(this.sound);
-  this.play = function () {
-    this.sound.play().catch((error) => {
-      console.error("Playback failed:", error);
-    });
-  };
-  this.stop = function () {
-    this.sound.pause();
-  };
-}
+const settings = document.getElementById("settings");
+const instruction = document.getElementById("instruction");
 
-let mySound = new sound("audio/megalovania.mp3");
-mySound.sound.volume = 0.5;
-
-// Ensure user interaction is required to play the sound
-document.addEventListener("click", function () {
-  mySound.play();
+easy.addEventListener("click", () => {
+  window.location.href = `${window.location.origin}/easy.html`;
 });
-
-document.addEventListener("keydown", function () {
-  mySound.play();
+medium.addEventListener("click", () => {
+  window.location.href = `${window.location.origin}/intermediate.html`;
 });
-
-bgSound.addEventListener("change", changeVolume);
-
-function changeVolume() {
-  mySound.sound.volume = bgSound.value / 100;
-}
+hard.addEventListener("click", () => {
+  window.location.href = `${window.location.origin}/hard.html`;
+});
+settings.addEventListener("click", () => {
+  window.location.href = `${window.location.origin}/settings.html`;
+});
+instruction.addEventListener("click", () => {
+  window.location.href = `${window.location.origin}/instructions.html`;
+});

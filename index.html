@@ -1,86 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matching Game</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/main3.css">
-</head>
-<body>
-  <div class="background-bubbles"></div>
-  <div class="container">
-    <div class="new">
-      <div class="column">
-        <div class="bubbles2">
-          <div class="bubble small pink"></div>
-          <div class="bubble large blue"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matching Game</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main3.css" />
+  </head>
+  <body>
+    <div class="background-bubbles"></div>
+    <div class="container">
+      <div class="new">
+        <div class="column">
+          <div class="bubbles2">
+            <div class="bubble small pink"></div>
+            <div class="bubble large blue"></div>
+          </div>
+          <div class="bubbles2">
+            <div class="bubble medium pink"></div>
+            <div class="bubble small blue"></div>
+          </div>
         </div>
-        <div class="bubbles2">
-          <div class="bubble medium pink"></div>
-          <div class="bubble small blue"></div>
+        <div class="bubbles">
+          <div class="bubble pink"></div>
+          <div class="bubble blue"></div>
+          <div class="bubble yellow"></div>
+          <div class="bubble pink"></div>
+          <div class="bubble blue"></div>
         </div>
       </div>
-      <div class="bubbles">
-        <div class="bubble pink"></div>
-        <div class="bubble blue"></div>
-        <div class="bubble yellow"></div>
-        <div class="bubble pink"></div>
-        <div class="bubble blue"></div>
+
+      <div class="content">
+        <div class="title">Matching Game</div>
+        <div class="subtitle">Matching and game</div>
+        <div class="buttons">
+          <div id="easy" class="button pink">
+            <div class="circle">?</div>
+            <div class="button-text">Easy</div>
+          </div>
+          <div id="medium" class="button mint">
+            <div class="circle">?</div>
+            <div class="button-text">Medium</div>
+          </div>
+          <div id="hard" class="button lavender">
+            <div class="circle">?</div>
+            <div class="button-text">Hard</div>
+          </div>
+        </div>
+
+        <div class="control-buttons">
+          <div class="control-button" id="settings">Settings</div>
+          <div
+            class="control-button"
+            style="background-color: #e1bee7"
+            id="instruction"
+          >
+            Instruction
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="content">
-      <div class="title">Matching Game</div>
-      <div class="subtitle">Matching and game</div>
-      <div class="buttons">
-        <div class="button pink">
-          <div class="circle">?</div>
-          <div class="button-text">Easy</div>
-        </div>
-        <div class="button mint">
-          <div class="circle">?</div>
-          <div class="button-text">Medium</div>
-        </div>
-        <div class="button lavender">
-          <div class="circle">?</div>
-          <div class="button-text">Hard</div>
-        </div>
-      </div>
-      
-      <div class="control-buttons">
-        <div class="control-button">Set</div>
-        <div class="control-button" style="background-color:#E1BEE7;" id="Instruction">Instruction</div>
-      </div>
-    </div>
-
-  </div>
-
-  <script>
-    const bubbleContainer = document.querySelector('.background-bubbles');
-
-    function createBubble() {
-      const bubble = document.createElement('span');
-      const size = Math.random() * 40 + 10; // Random size between 10px and 50px
-      const colorArray = ['#F8BBD0', '#B2DFDB', '#E1BEE7', '#FFD1DC', '#C6E2FF', '#FFF9C4'];
-      const randomColor = colorArray[Math.floor(Math.random() * colorArray.length)];
-
-      bubble.style.width = `${size}px`;
-      bubble.style.height = `${size}px`;
-      bubble.style.backgroundColor = randomColor;
-      bubble.style.left = `${Math.random() * 100}%`;
-      bubble.style.animationDuration = `${Math.random() * 6 + 4}s`; // Random duration between 4s and 10s
-      bubble.style.animationDelay = `${Math.random() * 3}s`; // Random delay up to 3s
-
-      bubbleContainer.appendChild(bubble);
-
-      // Remove bubble after animation ends
-      bubble.addEventListener('animationend', () => {
-        bubble.remove();
-      });
-    }
-
-    setInterval(createBubble, 350); // Create a bubble every 500ms
-  </script>
-</body>
+    <script src="js/main3.js"></script>
+  </body>
 </html>
