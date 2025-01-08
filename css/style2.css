@@ -44,11 +44,11 @@ background-color: #F8BBD0;
     color: #0f7367d9;
 } */
 .full-card {
-    background-color: #ebdae0;
+    background-color: #f7f3f0;
     margin: 20px auto; /* Center the card horizontally */
     padding: 20px; /* Adjust padding for content */
     border-radius: 20px;
-    max-width: 400px; /* Set a maximum width for the card */
+    max-width: 450px; /* Set a maximum width for the card */
     max-height: auto;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
@@ -118,52 +118,34 @@ span{
 }
 
 
-/* animated background */
-/* Bubble container (covers the entire page) */
-.bubbles {
+.background-bubbles {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Keep it behind all other content */
+    z-index: -1; /* Keep it behind everything */
     overflow: hidden;
-    background: linear-gradient(to bottom, #F8BBD0, #46ACA3); /* Pink and cyan gradient */
-}
-
-/* Style individual bubbles */
-.bubbles span {
+    background: linear-gradient(to bottom, #f8bbd0, #46aca3);
+  }
+  .background-bubbles span {
     position: absolute;
-    bottom: -100px; /* Start below the viewport */
+    bottom: -50px;
     width: 20px;
     height: 20px;
-    background-color: rgba(255, 255, 255, 0.5); /* Light semi-transparent bubbles */
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     animation: rise 8s infinite ease-in-out;
-    animation-delay: calc(-1s * var(--i)); /* Different start times */
-}
-
-/* Animation for bubbles */
-@keyframes rise {
+  }
+  @keyframes rise {
     0% {
-        transform: translateY(0) scale(1); /* Start at the bottom, normal size */
+      transform: translateY(0) scale(1);
     }
     50% {
-        transform: translateY(-50vh) scale(1.2); /* Rise halfway and slightly grow */
+      transform: translateY(-50vh) scale(1.2);
     }
     100% {
-        transform: translateY(-100vh) scale(0.8); /* Disappear at the top */
-        opacity: 0;
+      transform: translateY(-100vh) scale(0.8);
+      opacity: 0;
     }
-}
-
-/* Create different sizes and positions */
-.bubbles span:nth-child(1) { left: 10%; width: 15px; height: 15px; background-color: #F8BBD0; --i: 0; }
-.bubbles span:nth-child(2) { left: 20%; width: 25px; height: 25px; background-color: #46ACA3; --i: 1; }
-.bubbles span:nth-child(3) { left: 30%; width: 10px; height: 10px; background-color: #F8BBD0; --i: 2; }
-.bubbles span:nth-child(4) { left: 40%; width: 20px; height: 20px; background-color: #46ACA3; --i: 3; }
-.bubbles span:nth-child(5) { left: 50%; width: 30px; height: 30px; background-color: #F8BBD0; --i: 4; }
-.bubbles span:nth-child(6) { left: 60%; width: 12px; height: 12px; background-color: #46ACA3; --i: 5; }
-.bubbles span:nth-child(7) { left: 70%; width: 18px; height: 18px; background-color: #F8BBD0; --i: 6; }
-.bubbles span:nth-child(8) { left: 80%; width: 22px; height: 22px; background-color: #46ACA3; --i: 7; }
-.bubbles span:nth-child(9) { left: 90%; width: 25px; height: 25px; background-color: #F8BBD0; --i: 8; }
+  }
