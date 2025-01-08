@@ -25,7 +25,7 @@
             <p> Game Time:</p>
         </div>
         <div class="tries">
-           <p> wrong tries:</p><span>0</span>
+           <p>  Tries:</p><span>0</span>
     </div>
     <div class="Reset"><a href="hard.html"> Reset </a><a href="hard.html"><i id="resetIcon" class="fas fa-redo-alt"></i></a></div>
     </div>
@@ -416,7 +416,14 @@
             </div>
         </div>
     </div>
-    <script src="js/game.js"></script>
+    <div class="win-popup" id="winPopup">
+        <div class="win-content">
+          <h1>🎉 Congratulations! 🎉</h1>
+          <p id="winMessage"></p>
+          <button id="playAgainBtn">Play Again</button>
+        </div>
+      </div>
+    <script src="js/hard.js"></script>
 </body>
 
 </html> 

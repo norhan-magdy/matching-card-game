@@ -176,20 +176,20 @@ function checkWinCondition() {
     const finalScore = triesCount;
 
     // جلب السكور السابق
-    const previousScore = localStorage.getItem('bestScore');
+    const previousScore = localStorage.getItem('bestScore1');
     let message = `Time Taken: ${Math.floor(timeTaken / 60)}m ${timeTaken % 60}s\n Tries: ${triesCount}\nYour Score: ${finalScore}`;
 
     // مقارنة السكور
     if (previousScore) {
       if (finalScore < previousScore) {
         message += `\n🎊 New High Score! Previous Best: ${previousScore}`;
-        localStorage.setItem('bestScore', finalScore);
+        localStorage.setItem('bestScore1', finalScore);
       } else {
         message += `\nYour Best Score: ${previousScore}`;
       }
     } else {
       message += `\nThis is your first game!`;
-      localStorage.setItem('bestScore', finalScore);
+      localStorage.setItem('bestScore1', finalScore);
     }
 
     // إظهار نافذة الفوز
