@@ -6,88 +6,96 @@ for (let i = 0; i < 300; i++) {
 }
 
 let deuration = 700;
+let blocksContainer = document.querySelector("#gameBlocks");
 
-let blocksContainer = document.querySelector(".memory-game-blocks");
+// Cards data
+const cardData = [
+    { technology: "shield", image: "images/shield.png", alt: "shield" },
+    { technology: "avengers", image: "images/avengers.png", alt: "avengers" },
+    { technology: "batman", image: "images/batman.png", alt: "batman" },
+    { technology: "black", image: "images/black.png", alt: "black" },
+    { technology: "hulk", image: "images/man.png", alt: "hulk" },
+    { technology: "mjolnir", image: "images/mjolnir.png", alt: "mjolnir" },
+    { technology: "groot", image: "images/baby-groot.png", alt: "groot" },
+    { technology: "dark", image: "images/dark.png", alt: "dark" },
+    { technology: "bat", image: "images/bat.png", alt: "bat" },
+    { technology: "dracula", image: "images/dracula.png", alt: "dracula" },
+    { technology: "witch", image: "images/witch.png", alt: "witch" },
+    { technology: "castle", image: "images/castle.png", alt: "castle" },
+    { technology: "light-saber", image: "images/light-saber.png", alt: "light-saber" },
+    { technology: "harry-potter", image: "images/harry-potter.png", alt: "harry-potter" },
+    { technology: "movie", image: "images/movie.png", alt: "movie" },
+    { technology: "movie1", image: "images/movie (1).png", alt: "movie1" },
+    { technology: "broom", image: "images/broom.png", alt: "broom" },
+    { technology: "scary", image: "images/scary.png", alt: "scary" },
+];
 
-let blocks = Array.from(blocksContainer.children);
+// Duplicate the cards to make pairs
+const gameCards = [...cardData, ...cardData];
 
-let orderRange = [...Array(blocks.length).keys()];
-
-// Shuffle function
+// Shuffle the cards
 function shuffle(array) {
-  let current = array.length,
-    temp,
-    random;
+  let current = array.length, random;
 
   while (current > 0) {
-    // Get random number
     random = Math.floor(Math.random() * current);
-
-    // Decrease by one
     current--;
-
-    // 1. Save current element in temp
-    temp = array[current];
-    // 2. Current element = new random element
-    array[current] = array[random];
-    // 3. Swap random element with temp
-    array[random] = temp;
+    [array[current], array[random]] = [array[random], array[current]];
   }
 
   return array;
 }
 
-// Shuffle the orderRange before applying it
-shuffle(orderRange);
+// Shuffle the game cards
+shuffle(gameCards);
 
-// console.log("Shuffled Order:", orderRange);
+// Create and append cards dynamically
+gameCards.forEach(card => {
+  const gameBlock = document.createElement("div");
+  gameBlock.classList.add("game-block");
+  gameBlock.setAttribute("data-technology", card.technology);
 
-// Add order CSS property to game blocks
-blocks.forEach((block, index) => {
-  // Apply shuffled order
-  block.style.order = orderRange[index];
+  const front = document.createElement("div");
+  front.classList.add("face", "front");
 
-  // Add click event
-  block.addEventListener("click", function () {
-    flipBlock(block);
+  const back = document.createElement("div");
+  back.classList.add("face", "back");
+  const img = document.createElement("img");
+  img.src = card.image;
+  img.alt = card.alt;
+  back.appendChild(img);
+
+  gameBlock.appendChild(front);
+  gameBlock.appendChild(back);
+
+  blocksContainer.appendChild(gameBlock);
+
+  gameBlock.addEventListener("click", function () {
+    flipBlock(gameBlock);
   });
 });
 
 // Flip block function
 function flipBlock(selectedBlock) {
-  // Add 'is-flipped' class
   selectedBlock.classList.add("is-flipped");
 
-  // Collect all flipped blocks
-  let allFlippedBlocks = blocks.filter((block) =>
+  let allFlippedBlocks = Array.from(blocksContainer.children).filter((block) =>
     block.classList.contains("is-flipped")
   );
 
-  // Check if two blocks are flipped
   if (allFlippedBlocks.length === 2) {
-    // console.log('Two blocks flipped');
-
-    // calling stop clicking function
     stopclicking();
-    //check the flipped cards
     checkMatchingBlocks(allFlippedBlocks[0], allFlippedBlocks[1]);
   }
 }
 
-//stop clicking function
 function stopclicking() {
-  // add class no clicking on main container
   blocksContainer.classList.add("no-clicking");
-
-  //timer for event
   setTimeout(() => {
-    //remove class no clicking after dauration
     blocksContainer.classList.remove("no-clicking");
   }, deuration);
 }
 
-//check matching blocks
-// Check matching blocks
 function checkMatchingBlocks(firstBlock, secondBlock) {
   let triesElement = document.querySelector(".tries span");
 
@@ -108,78 +116,57 @@ function checkMatchingBlocks(firstBlock, secondBlock) {
   }
 }
 
-// Select the necessary DOM elements
+// Timer and win logic
 const timerElement = document.querySelector(".time");
+let seconds = 0;
+let interval;
 
-let seconds = 0; // Initialize the time variable
-let interval; // Store the interval reference
-
-// Start the game function
 function startGame() {
-  // Initialize game logic here
-  //   console.log("Game started!");
-
-  // Start the timer as soon as the game starts
   startTimer();
 }
 
-// Start counting time
 function startTimer() {
   interval = setInterval(() => {
     seconds++;
     updateTimerDisplay();
-  }, 1000); // Update every second
+  }, 1000);
 }
-startGame();
-// Update the timer display
+
 function updateTimerDisplay() {
   const minutes = Math.floor(seconds / 60);
   const remainingSeconds = seconds % 60;
   timerElement.textContent = `Game Time: ${minutes}m ${remainingSeconds}s`;
 }
 
+startGame();
 
-
-// وظيفة لإظهار النافذة
-// وظيفة لإظهار نافذة الفوز
+// Show win popup
 function showWinPopup(message) {
   const popup = document.getElementById('winPopup');
   const messageElement = document.getElementById('winMessage');
 
-  // إضافة الرسالة إلى النافذة
   messageElement.textContent = message;
-
-  // إظهار النافذة
   popup.style.visibility = 'visible';
   popup.style.opacity = '1';
 }
 
-// إضافة حدث زر "إعادة اللعب"
+// Play again button functionality
 document.getElementById('playAgainBtn').addEventListener('click', () => {
-  location.reload(); // إعادة تحميل اللعبة
+  location.reload(); // Reload the game
 });
 
-// التحقق من الفوز
+// Check win condition
 function checkWinCondition() {
-  const matchedBlocks = document.querySelectorAll('.has-match'); // البطاقات المطابقة
-  if (matchedBlocks.length === blocks.length) { // إذا تطابقت جميع البطاقات
-    clearInterval(interval); // إيقاف المؤقت
-
-    // احسب الوقت المستغرق
+  const matchedBlocks = document.querySelectorAll('.has-match');
+  if (matchedBlocks.length === blocksContainer.children.length) {
+    clearInterval(interval);
     const timeTaken = seconds;
-
-    // جلب عدد المحاولات
     const triesElement = document.querySelector('.tries span');
     const triesCount = parseInt(triesElement.innerHTML);
-
-    // حساب السكور النهائي
     const finalScore = triesCount;
-
-    // جلب السكور السابق
     const previousScore = localStorage.getItem('bestScore2');
-    let message = `Time Taken: ${Math.floor(timeTaken / 60)}m ${timeTaken % 60}s\n Tries: ${triesCount}\nYour Score: ${finalScore}`;
+    let message = `Time Taken: ${Math.floor(timeTaken / 60)}m ${timeTaken % 60}s\nTries: ${triesCount}\nYour Score: ${finalScore}`;
 
-    // مقارنة السكور
     if (previousScore) {
       if (finalScore < previousScore) {
         message += `\n🎊 New High Score! Previous Best: ${previousScore}`;
@@ -192,13 +179,12 @@ function checkWinCondition() {
       localStorage.setItem('bestScore2', finalScore);
     }
 
-    // إظهار نافذة الفوز
     showWinPopup(message);
   }
 }
 
-// استدعاء وظيفة التحقق عند كل تطابق
-blocks.forEach((block) => {
+// Trigger checkWinCondition on each transitionend event
+blocksContainer.querySelectorAll('.game-block').forEach((block) => {
   block.addEventListener('transitionend', () => {
     checkWinCondition();
   });

@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>matching game</title>
+    <title>Matching Game</title>
     <link rel="stylesheet" href="css/game.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
 </head>
 <body>
+    
     <div class="bubbles"></div>
+
+    
     <header>
         <span>
             <a href="intermediate.html">
@@ -17,245 +19,38 @@
                 Match It
             </a>
         </span>
-        </nav>
-	</header>
-    
+    </header>
+
+   
     <div class="info-container">
         <div class="time">
-            <p> Game Time:</p>
+            <p>Game Time: <span id="timer">0:00</span></p>
         </div>
         <div class="tries">
-           <p> Tries:</p><span>0</span>
-    </div>
-    <div class="Reset"><a href="intermediate.html"> Reset </a><a href="intermediate.html"><i id="resetIcon" class="fas fa-redo-alt"></i></a></div>
-    </div>
-    <div class="memory-game-blocks block6">
-        <div class="game-block " data-technology="shield">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/shield.png" alt="shield">
-            </div>
+            <p>Tries: <span id="tries-count">0</span></p>
         </div>
-        <div class="game-block "  data-technology="shield">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/shield.png" alt="shield">
-            </div>
-        </div>
-        <div class="game-block "  data-technology="avengers">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/avengers.png" alt="avengers">
-            </div>
-        </div>
-        <div class="game-block "  data-technology="avengers">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/avengers.png" alt="avengers">
-            </div>
-        </div>
-        <div class="game-block "  data-technology="batman">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/batman.png" alt="batman">
-            </div>
-        </div>
-        <div class="game-block"  data-technology="batman">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/batman.png" alt="batman">
-            </div>
-        </div>
-        <div class="game-block "  data-technology="black">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/black.png" alt="black">
-            </div>
-        </div>
-        <div class="game-block "  data-technology="black">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/black.png" alt="black">
-            </div>
-        </div>
-        <div class="game-block "  data-technology="hulk">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/man.png" alt="hulk">
-            </div>
-        </div>
-        <div class="game-block "  data-technology="hulk">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/man.png" alt="hulk">
-            </div>
-        </div>
-        <div class="game-block "  data-technology="mjolnir">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/mjolnir.png" alt="mjolnir">
-            </div>
-        </div>
-        <div class="game-block "  data-technology="mjolnir">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/mjolnir.png" alt="mjolnir">
-            </div>
-        </div>
-        <div class="game-block "  data-technology="groot">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/baby-groot.png" alt="groot">
-            </div>
-        </div>
-        <div class="game-block "  data-technology="groot">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/baby-groot.png" alt="groot">
-            </div>
-        </div>
-        <div class="game-block "  data-technology="dark">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/dark.png" alt="dark">
-            </div>
-        </div>
-        <div class="game-block "  data-technology="dark">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/dark.png" alt="dark">
-            </div>
-        </div>
-        <div class="game-block " data-technology="bat">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/bat.png" alt="bat">
-            </div>
-        </div>
-        <div class="game-block "  data-technology="bat">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/bat.png" alt="bat">
-            </div>
-        </div>
-        <div class="game-block " data-technology="dracula">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/dracula.png" alt="dracula">
-            </div>
-        </div>
-        <div class="game-block "  data-technology="dracula">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/dracula.png" alt="dracula">
-            </div>
-        </div>
-        <div class="game-block " data-technology="witch">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/witch.png" alt="witch">
-            </div>
-        </div>
-        <div class="game-block "  data-technology="witch">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/witch.png" alt="witch">
-            </div>
-        </div>
-        <div class="game-block " data-technology="castle">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/castle.png" alt="castle">
-            </div>
-        </div>
-        <div class="game-block "  data-technology="castle">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/castle.png" alt="castle">
-            </div>
-        </div>
-        <div class="game-block " data-technology="light-saber">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/light-saber.png" alt="light-saber">
-            </div>
-        </div>
-        <div class="game-block "  data-technology="light-saber">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/light-saber.png" alt="light-saber">
-            </div>
-        </div>
-        <div class="game-block " data-technology="harry-potter">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/harry-potter.png" alt="harry-potter">
-            </div>
-        </div>
-        <div class="game-block "  data-technology="harry-potter">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/harry-potter.png" alt="harry-potter">
-            </div>
-        </div>
-        <div class="game-block " data-technology="movie">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/movie.png" alt="movie">
-            </div>
-        </div>
-        <div class="game-block "  data-technology="movie">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/movie.png" alt="movie">
-            </div>
-        </div>
-        <div class="game-block " data-technology="movie1">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/movie (1).png" alt="movie1">
-            </div>
-        </div>
-        <div class="game-block "  data-technology="movie1">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/movie (1).png" alt="movie1">
-            </div>
-        </div>
-        <div class="game-block " data-technology="broom">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/broom.png" alt="broom">
-            </div>
-        </div>
-        <div class="game-block "  data-technology="broom">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/broom.png" alt="broom">
-            </div>
-        </div>
-        <div class="game-block " data-technology="scary">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/scary.png" alt="scary">
-            </div>
-        </div>
-        <div class="game-block "  data-technology="scary">
-            <div class="face front"></div>
-            <div class="face back">
-                <img src="images/scary.png" alt="scary">
-            </div>
+        <div class="reset">
+            <a href="intermediate.html" id="resetBtn">Reset</a>
+            <a href="intermediate.html" class="reset-icon"><i class="fas fa-redo-alt"></i></a>
         </div>
     </div>
+
+    
+    <div class="memory-game-blocks block6" id="gameBlocks">
+       
+    </div>
+
+   
     <div class="win-popup" id="winPopup">
         <div class="win-content">
-          <h1>🎉 Congratulations! 🎉</h1>
-          <p id="winMessage"></p>
-          <button id="playAgainBtn">Play Again</button>
+            <h1>🎉 Congratulations! 🎉</h1>
+            <p id="winMessage"></p>
+            <button id="playAgainBtn">Play Again</button>
         </div>
-      </div>
+    </div>
+
+    
     <script src="js/intermediate.js"></script>
     <script type="module" src="js/sound2.js"></script>
 </body>
-
-</html> 
+</html>
