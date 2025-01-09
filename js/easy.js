@@ -1,6 +1,8 @@
 function transperentbackground(){
   let background = document.querySelector('.transperent-page')
   background.style.display = 'none'
+  flipAllCardsTemporarily(2000);
+  startTimer();
 }
 const bubbleContainer = document.querySelector(".bubbles");
 for (let i = 0; i < 300; i++) {
@@ -83,7 +85,7 @@ function flipAllCardsTemporarily(duration) {
 }
 
 // استدعِ الدالة عند بدء اللعبة
-flipAllCardsTemporarily(2000); // اقلب الكروت لمدة 3 ثوانٍ
+// flipAllCardsTemporarily(2000); // اقلب الكروت لمدة 3 ثوانٍ
 
 
 
@@ -143,9 +145,9 @@ const timerElement = document.querySelector(".time");
 let seconds = 0;
 let interval;
 
-function startGame() {
-  startTimer();
-}
+// function startGame() {
+//   startTimer();
+// }
 
 function startTimer() {
   interval = setInterval(() => {
@@ -160,7 +162,7 @@ function updateTimerDisplay() {
   timerElement.textContent = `Game Time: ${minutes}m ${remainingSeconds}s`;
 }
 
-startGame();
+// startGame();
 
 // Show win popup
 function showWinPopup(message) {
