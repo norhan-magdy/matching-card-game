@@ -173,6 +173,7 @@ function checkWinCondition() {
   }
 }
 
+
 // Trigger checkWinCondition on each transitionend event
 blocksContainer.querySelectorAll('.game-block').forEach((block) => {
   block.addEventListener('transitionend', () => {
