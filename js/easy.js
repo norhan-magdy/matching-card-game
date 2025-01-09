@@ -64,9 +64,13 @@ gameCards.forEach(card => {
     flipBlock(gameBlock);
   });
 });
-
+const flipAudio= new Audio('audio/flip.mp3')
+const wrongAudio= new Audio('audio/faliure.mp3')
+const successAudio= new Audio('audio/success.mp3')
 // Flip block function
 function flipBlock(selectedBlock) {
+  flipAudio.currentTime=0;
+  flipAudio.play();
   selectedBlock.classList.add("is-flipped");
 
   let allFlippedBlocks = Array.from(blocksContainer.children).filter((block) =>
@@ -94,12 +98,16 @@ function checkMatchingBlocks(firstBlock, secondBlock) {
     secondBlock.classList.remove("is-flipped");
 
     triesElement.innerHTML = parseInt(triesElement.innerHTML) + 1;
+    successAudio.currentTime=0
+    successAudio.play();
     firstBlock.classList.add("has-match");
     secondBlock.classList.add("has-match");
   } else {
     triesElement.innerHTML = parseInt(triesElement.innerHTML) + 1;
 
     setTimeout(() => {
+      wrongAudio.currentTime=0;
+      wrongAudio.play();
       firstBlock.classList.remove("is-flipped");
       secondBlock.classList.remove("is-flipped");
     }, deuration);
