@@ -64,6 +64,26 @@ gameCards.forEach(card => {
     flipBlock(gameBlock);
   });
 });
+
+
+function flipAllCardsTemporarily(duration) {
+  const allBlocks = Array.from(blocksContainer.children);
+
+  // أضف الفليب لجميع الكروت
+  allBlocks.forEach((block) => block.classList.add("is-flipped"));
+
+  // أزل الفليب بعد المدة المحددة
+  setTimeout(() => {
+    allBlocks.forEach((block) => block.classList.remove("is-flipped"));
+  }, duration);
+}
+
+// استدعِ الدالة عند بدء اللعبة
+flipAllCardsTemporarily(2000); // اقلب الكروت لمدة 3 ثوانٍ
+
+
+
+
 const flipAudio= new Audio('audio/flip.mp3')
 const wrongAudio= new Audio('audio/faliure.mp3')
 const successAudio= new Audio('audio/success.mp3')
