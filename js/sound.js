@@ -15,7 +15,7 @@ export function sound(src) {
 }
 
 export let mySound = new sound("../audio/puzzle-game-loop.mp3");
-mySound.sound.volume = 0.2;
+mySound.sound.volume = 0.3;
 // Ensure user interaction is required to play the sound
 document.addEventListener("DOMContentLoaded", function () {
   mySound.play();
