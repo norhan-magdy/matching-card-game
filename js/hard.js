@@ -1,6 +1,6 @@
-function transperentbackground(){
-  let background = document.querySelector('.transperent-page')
-  background.style.display = 'none'
+function transperentbackground() {
+  let background = document.querySelector(".transperent-page");
+  background.style.display = "none";
 }
 const bubbleContainer = document.querySelector(".bubbles");
 for (let i = 0; i < 300; i++) {
@@ -26,15 +26,31 @@ const cardData = [
   { technology: "alien", image: "images/alien.png", alt: "alien" },
   { technology: "banana", image: "images/banana.png", alt: "banana" },
   { technology: "nut", image: "images/nut.png", alt: "nut" },
-  { technology: "strawberry", image: "images/strawberry.png", alt: "strawberry" },
-  { technology: "watermelon", image: "images/watermelon.png", alt: "watermelon" },
+  {
+    technology: "strawberry",
+    image: "images/strawberry.png",
+    alt: "strawberry",
+  },
+  {
+    technology: "watermelon",
+    image: "images/watermelon.png",
+    alt: "watermelon",
+  },
   { technology: "zombie", image: "images/zombie.png", alt: "zombie" },
   { technology: "monster2", image: "images/monster2.png", alt: "monster2" },
   { technology: "monster", image: "images/monster.png", alt: "monster" },
   { technology: "witch", image: "images/witch.png", alt: "witch" },
   { technology: "manga", image: "images/manga.png", alt: "manga" },
-  { technology: "i-dont-know", image: "images/i-dont-know.png", alt: "i-dont-know" },
-  { technology: "horror-movie", image: "images/horror-movie.png", alt: "horror-movie" },
+  {
+    technology: "i-dont-know",
+    image: "images/i-dont-know.png",
+    alt: "i-dont-know",
+  },
+  {
+    technology: "horror-movie",
+    image: "images/horror-movie.png",
+    alt: "horror-movie",
+  },
   { technology: "ghost-1", image: "images/ghost-1.png", alt: "ghost-1" },
   { technology: "ghost-boy", image: "images/ghost-boy.png", alt: "ghost-boy" },
   { technology: "bat", image: "images/bat.png", alt: "bat" },
@@ -43,7 +59,7 @@ const cardData = [
   { technology: "witch-2", image: "images/witch-2.png", alt: "witch-2" },
   { technology: "lll", image: "images/lll.png", alt: "lll" },
   { technology: "fff", image: "images/fff.png", alt: "fff" },
-  { technology: "sss", image: "images/sss.png", alt: "sss" }
+  { technology: "sss", image: "images/sss.png", alt: "sss" },
 ];
 
 // Duplicate the cards to make pairs
@@ -51,7 +67,8 @@ const gameCards = [...cardData, ...cardData];
 
 // Shuffle the cards
 function shuffle(array) {
-  let current = array.length, random;
+  let current = array.length,
+    random;
 
   while (current > 0) {
     random = Math.floor(Math.random() * current);
@@ -66,7 +83,7 @@ function shuffle(array) {
 shuffle(gameCards);
 
 // Create and append cards dynamically
-gameCards.forEach(card => {
+gameCards.forEach((card) => {
   const gameBlock = document.createElement("div");
   gameBlock.classList.add("game-block");
   gameBlock.setAttribute("data-technology", card.technology);
@@ -83,8 +100,6 @@ gameCards.forEach(card => {
 
   gameBlock.appendChild(front);
   gameBlock.appendChild(back);
-  console.log(gameBlock)
-  console.log(blocksContainer)
   blocksContainer.appendChild(gameBlock);
 
   gameBlock.addEventListener("click", function () {
@@ -107,15 +122,12 @@ function flipAllCardsTemporarily(duration) {
 // استدعِ الدالة عند بدء اللعبة
 flipAllCardsTemporarily(3000); // اقلب الكروت لمدة 3 ثوانٍ
 
-
-
-
-const flipAudio= new Audio('audio/flip.mp3')
-const wrongAudio= new Audio('audio/faliure.mp3')
-const successAudio= new Audio('audio/success.mp3')
+const flipAudio = new Audio("audio/flip.mp3");
+const wrongAudio = new Audio("audio/faliure.mp3");
+const successAudio = new Audio("audio/success.mp3");
 // Flip block function
 function flipBlock(selectedBlock) {
-  flipAudio.currentTime=0;
+  flipAudio.currentTime = 0;
   flipAudio.play();
   selectedBlock.classList.add("is-flipped");
 
@@ -144,7 +156,7 @@ function checkMatchingBlocks(firstBlock, secondBlock) {
     secondBlock.classList.remove("is-flipped");
 
     triesElement.innerHTML = parseInt(triesElement.innerHTML) + 1;
-    successAudio.currentTime=0
+    successAudio.currentTime = 0;
     successAudio.play();
     firstBlock.classList.add("has-match");
     secondBlock.classList.add("has-match");
@@ -152,7 +164,7 @@ function checkMatchingBlocks(firstBlock, secondBlock) {
     triesElement.innerHTML = parseInt(triesElement.innerHTML) + 1;
 
     setTimeout(() => {
-      wrongAudio.currentTime=0;
+      wrongAudio.currentTime = 0;
       wrongAudio.play();
       firstBlock.classList.remove("is-flipped");
       secondBlock.classList.remove("is-flipped");
@@ -186,48 +198,50 @@ startGame();
 
 // Show win popup
 function showWinPopup(message) {
-  const popup = document.getElementById('winPopup');
-  const messageElement = document.getElementById('winMessage');
+  const popup = document.getElementById("winPopup");
+  const messageElement = document.getElementById("winMessage");
 
   messageElement.textContent = message;
-  popup.style.visibility = 'visible';
-  popup.style.opacity = '1';
+  popup.style.visibility = "visible";
+  popup.style.opacity = "1";
 }
 
 // Play again button functionality
-document.getElementById('playAgainBtn').addEventListener('click', () => {
+document.getElementById("playAgainBtn").addEventListener("click", () => {
   location.reload(); // Reload the game
 });
 
 // Check win condition
 function checkWinCondition() {
-  const matchedBlocks = document.querySelectorAll('.has-match');
+  const matchedBlocks = document.querySelectorAll(".has-match");
   if (matchedBlocks.length === blocksContainer.children.length) {
     clearInterval(interval);
     const timeTaken = seconds;
-    const triesElement = document.querySelector('.tries span');
+    const triesElement = document.querySelector(".tries span");
     const triesCount = parseInt(triesElement.innerHTML);
     const finalScore = triesCount;
-    const previousScore = localStorage.getItem('bestScore3');
-    let message = `Time Taken: ${Math.floor(timeTaken / 60)}m ${timeTaken % 60}s\nTries: ${triesCount}\nYour Score: ${finalScore}`;
+    const previousScore = localStorage.getItem("bestScore3");
+    let message = `Time Taken: ${Math.floor(timeTaken / 60)}m ${
+      timeTaken % 60
+    }s\nTries: ${triesCount}\nYour Score: ${finalScore}`;
 
     if (previousScore) {
       if (finalScore < previousScore) {
         message += `\n🎊 New High Score! Previous Best: ${previousScore}`;
-        localStorage.setItem('bestScore3', finalScore);
+        localStorage.setItem("bestScore3", finalScore);
       } else {
         message += `\nYour Best Score: ${previousScore}`;
       }
     } else {
       message += `\nThis is your first game!`;
-      localStorage.setItem('bestScore3', finalScore);
+      localStorage.setItem("bestScore3", finalScore);
     }
     showWinPopup(message);
   }
 }
 // Trigger checkWinCondition on each transitionend event
-blocksContainer.querySelectorAll('.game-block').forEach((block) => {
-  block.addEventListener('transitionend', () => {
+blocksContainer.querySelectorAll(".game-block").forEach((block) => {
+  block.addEventListener("transitionend", () => {
     checkWinCondition();
   });
 });

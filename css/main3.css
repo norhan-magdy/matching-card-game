@@ -13,6 +13,31 @@ body {
   height: 100vh;
   overflow: hidden;
 }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+span {
+  font-family: "Wendy One", sans-serif;
+  font-size: 28px;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  border-radius: 40%;
+}
+a {
+  font-family: "Wendy One", sans-serif;
+  text-decoration: none;
+  color: #ff69b4;
+  font-weight: bold;
+  transition: color 0.3s;
+  display: inline-block;
+  font-size: 20px;
+}
 
 /* Animated Background Bubbles */
 .background-bubbles {

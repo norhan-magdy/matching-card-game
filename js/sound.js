@@ -1,6 +1,7 @@
 export function sound(src) {
   this.sound = document.createElement("audio");
   this.sound.src = src;
+  this.sound.loop = true;
   this.sound.style.display = "none";
   document.body.appendChild(this.sound);
   this.play = function () {
@@ -13,8 +14,8 @@ export function sound(src) {
   };
 }
 
-export let mySound = new sound("audio/megalovania.mp3");
-mySound.sound.volume = 0.5;
+export let mySound = new sound("../audio/puzzle-game-loop.mp3");
+mySound.sound.volume = 0.2;
 // Ensure user interaction is required to play the sound
 document.addEventListener("DOMContentLoaded", function () {
   mySound.play();
