@@ -207,8 +207,22 @@ h2 {
   border: 5px solid #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
+  cursor: pointer;
 }
-
+.circle-btn:hover {
+  animation: spin 2s infinite linear;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
 .circle-btn::before {
   font-size: xx-large;
   content: "♪";

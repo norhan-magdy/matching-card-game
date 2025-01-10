@@ -1,4 +1,4 @@
-export function sound(src) {
+function sound(src) {
   this.sound = document.createElement("audio");
   this.sound.src = src;
   this.sound.loop = true;
@@ -6,14 +6,9 @@ export function sound(src) {
   this.sound.style.display = "none";
   document.body.appendChild(this.sound);
   this.play = function () {
-    this.sound
-      .play()
-      .then(() => {
-        console.log("Automatic playback started!");
-      })
-      .catch((error) => {
-        console.log("Playback failed:", error);
-      });
+    this.sound.play().catch((error) => {
+      console.log("Playback failed:", error);
+    });
   };
   this.stop = function () {
     this.sound.pause();
