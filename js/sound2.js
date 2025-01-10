@@ -13,11 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
   mySound.play();
 });
 
-document.addEventListener("click", function (e) {
-  if (e.target.href) {
-    localStorage.setItem("currentTime", `${mySound.sound.currentTime}`);
-  }
-  if (window.location.href.includes("index") && e.target.id) {
-    localStorage.setItem("currentTime", `${mySound.sound.currentTime}`);
-  }
+window.addEventListener("beforeunload", () => {
+  localStorage.setItem("currentTime", `${mySound.sound.currentTime}`);
+  mySound.stop();
 });

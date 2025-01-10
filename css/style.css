@@ -82,7 +82,6 @@ a {
   font-size: 20px;
 }
 #save {
-  width: 100px;
   height: 30px;
   background-color: #f8bbd0;
   border-radius: 10px;
@@ -226,4 +225,5 @@ h2 {
 p {
   font-size: 14px;
   color: #555;
+  margin: 15px 0;
 }
