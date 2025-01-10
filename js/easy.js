@@ -93,6 +93,7 @@ function flipAllCardsTemporarily(duration) {
 const flipAudio= new Audio('audio/flip.mp3')
 const wrongAudio= new Audio('audio/faliure.mp3')
 const successAudio= new Audio('audio/success.mp3')
+const clapping =new Audio('audio/clapping.mp3')
 // Flip block function
 function flipBlock(selectedBlock) {
   flipAudio.currentTime=0;
@@ -183,6 +184,8 @@ document.getElementById('playAgainBtn').addEventListener('click', () => {
 function checkWinCondition() {
   const matchedBlocks = document.querySelectorAll('.has-match');
   if (matchedBlocks.length === blocksContainer.children.length) {
+    clapping.currentTime=0;
+    clapping.play();
     clearInterval(interval);
     const timeTaken = seconds;
     const triesElement = document.querySelector('.tries span');
@@ -192,7 +195,9 @@ function checkWinCondition() {
     let message = `Time Taken: ${Math.floor(timeTaken / 60)}m ${timeTaken % 60}s\nTries: ${triesCount}\nYour Score: ${finalScore}`;
 
     if (previousScore) {
+     
       if (finalScore < previousScore) {
+       
         message += `\n🎊 New High Score! Previous Best: ${previousScore}`;
         localStorage.setItem('bestScore1', finalScore);
       } else {

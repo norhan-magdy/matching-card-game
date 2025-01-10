@@ -188,11 +188,13 @@ function showWinPopup(message) {
 document.getElementById('playAgainBtn').addEventListener('click', () => {
   location.reload(); // Reload the game
 });
-
+const clapping=new Audio('audio/clapping.mp3')
 // Check win condition
 function checkWinCondition() {
-  const matchedBlocks = document.querySelectorAll('.has-match');
+  const matchedBlocks = document.querySelectorAll(".has-match");
   if (matchedBlocks.length === blocksContainer.children.length) {
+    clapping.currentTime=0;
+    clapping.play();
     clearInterval(interval);
     const timeTaken = seconds;
     const triesElement = document.querySelector('.tries span');
