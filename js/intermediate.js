@@ -1,3 +1,7 @@
+function transperentbackground(){
+  let background = document.querySelector('.transperent-page')
+  background.style.display = 'none'
+}
 const bubbleContainer = document.querySelector(".bubbles");
 for (let i = 0; i < 300; i++) {
   const bubble = document.createElement("span");
