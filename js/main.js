@@ -4,6 +4,10 @@ const controlSoundTrack = document.getElementById("circle-control");
 import { mySound } from "./sound.js";
 let tracks = ["that-game-arcade", "megalovania", "puzzle-game-loop"];
 
+document.addEventListener("DOMContentLoaded", function () {
+  mySound.play();
+});
+
 bgSound.addEventListener("change", changeVolume);
 controlSoundTrack.addEventListener("click", changeTrack);
 
@@ -22,6 +26,7 @@ function changeTrack() {
     }
   }
   localStorage.setItem("soundTrack", `${mySound.sound.src}`);
+  mySound.play();
 }
 
 const save = document.getElementById("save");
