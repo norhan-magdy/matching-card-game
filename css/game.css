@@ -208,6 +208,58 @@ transition: color 0.3s;
 .memory-game-blocks .game-block:hover {
     transform: scale(1.05);
 }
+/* حاوية البالونات */
+/* حاوية البالونات */
+.balloons-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 9999; /* أعلى من العناصر الأخرى */
+    pointer-events: none; /* لا تتداخل مع النقرات */
+  }
+  
+  /* تصميم البالونات */
+  .balloon {
+    position: absolute;
+    bottom: -100px; /* تبدأ من خارج الشاشة */
+    width: 50px; /* عرض البالون */
+    height: 70px; /* ارتفاع البالون */
+    background: radial-gradient(circle at 50% 30%, #ff5f5f, #ff2e2e 70%); /* لون متدرج */
+    border-radius: 50% 50% 60% 60%; /* شكل بيضاوي يناسب البالونات */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل ناعم */
+    animation: floatUp 6s linear infinite; /* حركة الصعود */
+  }
+  
+  /* خيط البالون */
+  .balloon::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; /* خيط البالون يبدأ من الأسفل */
+    left: 50%;
+    width: 2px; /* عرض الخيط */
+    height: 50px; /* طول الخيط */
+    background: #555; /* لون الخيط */
+    transform: translateX(-50%);
+  }
+  
+  /* حركة البالونات */
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0) scale(1); /* تبدأ بالحجم الطبيعي */
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-50vh) scale(1.1); /* تكبر قليلاً أثناء الصعود */
+    }
+    100% {
+      transform: translateY(-100vh) scale(0.9); /* تصغر وتختفي */
+      opacity: 0;
+    }
+  }
+  
 /* الخلفية الشفافة */
 .win-popup {
     position: fixed;

@@ -178,16 +178,50 @@ function updateTimerDisplay() {
 function showWinPopup(message) {
   const popup = document.getElementById('winPopup');
   const messageElement = document.getElementById('winMessage');
+  const balloonsContainer = document.createElement('div'); // إنشاء حاوية البالونات
+  balloonsContainer.classList.add('balloons-container');
+  document.body.appendChild(balloonsContainer);
 
+  // إعداد رسالة الفوز
   messageElement.textContent = message;
+
+  // عرض نافذة التهنئة
   popup.style.visibility = 'visible';
   popup.style.opacity = '1';
+  document.getElementById('playAgainBtn').addEventListener('click', () => {
+      location.reload(); // Reload the game
+    });
+  // إنشاء البالونات
+  for (let i = 0; i < 20; i++) {
+    const balloon = document.createElement('div');
+    balloon.classList.add('balloon');
+
+    // تحديد موقع عشوائي
+    balloon.style.left = Math.random() * 100 + 'vw';
+    balloon.style.animationDuration = Math.random() * 2 + 3 + 's'; // مدة عشوائية
+    balloon.style.backgroundColor = getRandomColor(); // لون عشوائي
+
+    balloonsContainer.appendChild(balloon);
+
+    // إزالة البالونات بعد انتهاء الحركة
+    balloon.addEventListener('animationend', () => {
+      balloon.remove();
+    });
+  }
+
+  // إزالة حاوية البالونات بعد 5 ثوانٍ
+  setTimeout(() => {
+    balloonsContainer.remove();
+  }, 20000);
 }
 
-// Play again button functionality
-document.getElementById('playAgainBtn').addEventListener('click', () => {
-  location.reload(); // Reload the game
-});
+// وظيفة للحصول على ألوان عشوائية
+function getRandomColor() {
+  const colors = ['#ff5f5f', '#ff9f5f', '#ffdf5f', '#9fff5f', '#5fffdf', '#5f9fff'];
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
+
 const clapping=new Audio('audio/clapping.mp3')
 // Check win condition
 function checkWinCondition() {
