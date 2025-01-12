@@ -1,448 +1,523 @@
-
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 body {
-    
-    background: linear-gradient(to bottom, #F8BBD0, #46ACA3);
-    font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #f8bbd0, #46aca3);
+  font-family: "Arial", sans-serif;
 }
 
-
 span {
-    font-family: 'Wendy One', sans-serif;
-    font-size: 28px;
+  font-family: "Wendy One", sans-serif;
+  font-size: 28px;
 }
 
 .logo {
-    width: 30px;
-    height: 30px;
-    margin-right: 5px;
-    border-radius: 40%;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  border-radius: 40%;
 }
 a {
-    font-family: 'Wendy One', sans-serif;
-    text-decoration: none;
-    color: #ff69b4; 
-    font-weight: bold;
-    transition: color 0.3s;
-    display: inline-block;
-    font-size: 20px;
+  font-family: "Wendy One", sans-serif;
+  text-decoration: none;
+  color: #ff69b4;
+  font-weight: bold;
+  transition: color 0.3s;
+  display: inline-block;
+  font-size: 20px;
 }
 
-.Reset > a
-{
-all:unset;
-color: #ff69b4;
-font-size: 24px;
-font-weight: bold;
-cursor: pointer; 
-width: 50px;
-height: 50px;
-border-radius: 10%;
-transition: color 0.3s;
-
+.Reset > a {
+  all: unset;
+  color: #ff69b4;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 10%;
+  transition: color 0.3s;
 }
-
 
 /* Info Container */
 .info-container {
-    width: calc(100% - 20px); /* العرض يعتمد على الشاشة مع تقليل الحواف */
-    max-width: 450px; /* أقصى عرض للحاوية */
-    margin: 10px auto; /* تمركز الحاوية في المنتصف */
-    background-color: #fbeaf4;
-    padding: 15px 20px; /* حواف داخلية مناسبة */
-    font-size: 18px; /* ضبط حجم النص */
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* تحسين الظل */
-    border: 2px solid #ff85a2;
-    display: flex; /* لجعل العناصر بجانب بعضها */
-    justify-content: space-between; /* توزيع العناصر بشكل متساوٍ */
-    align-items: center; /* محاذاة العناصر عموديًا */
-    gap: 10px; /* مسافة بين العناصر */
+  width: calc(100% - 20px); /* العرض يعتمد على الشاشة مع تقليل الحواف */
+  max-width: 450px; /* أقصى عرض للحاوية */
+  margin: 10px auto; /* تمركز الحاوية في المنتصف */
+  background-color: #fbeaf4;
+  padding: 15px 20px; /* حواف داخلية مناسبة */
+  font-size: 18px; /* ضبط حجم النص */
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* تحسين الظل */
+  border: 2px solid #ff85a2;
+  display: flex; /* لجعل العناصر بجانب بعضها */
+  justify-content: space-between; /* توزيع العناصر بشكل متساوٍ */
+  align-items: center; /* محاذاة العناصر عموديًا */
+  gap: 10px; /* مسافة بين العناصر */
 }
 
 /* عناصر الوقت والمحاولات */
 .info-container .tries,
 .info-container .time {
-    font-size: 18px; /* حجم النص */
-    font-style: italic;
-    color: #ff69b4;
-    font-weight: bold;
-    display: flex;
-    align-items: center; /* محاذاة النص والأيقونة عموديًا */
-    gap: 5px; /* مسافة صغيرة بين النص وأي أيقونة */
+  font-size: 18px; /* حجم النص */
+  font-style: italic;
+  color: #ff69b4;
+  font-weight: bold;
+  display: flex;
+  align-items: center; /* محاذاة النص والأيقونة عموديًا */
+  gap: 5px; /* مسافة صغيرة بين النص وأي أيقونة */
 }
 
 /* زر Reset */
 .Reset {
-    display: flex; /* جعل الأيقونة والنص بجانب بعض */
-    align-items: center; /* محاذاة عموديًا */
-    gap: 5px; /* مسافة صغيرة بين الأيقونة والنص */
+  display: flex; /* جعل الأيقونة والنص بجانب بعض */
+  align-items: center; /* محاذاة عموديًا */
+  gap: 5px; /* مسافة صغيرة بين الأيقونة والنص */
 }
-.tries >span{
-    font-size: 18px;
+.tries > span {
+  font-size: 18px;
 }
 .Reset > a {
-    all: unset; /* إزالة جميع الأنماط الافتراضية */
-    color: #ff69b4;
-    font-size: 18px; /* حجم النص للزر */
-    font-weight: bold;
-    cursor: pointer;
-    display: inline-flex; /* عرض مرن لتوسيط النص والأيقونة */
-    padding: 5px 10px; /* تقليل الحواف الداخلية */
-    border-radius: 5px; /* استدارة الحواف */
-    border: 1px solid #ff69b4; /* إطار صغير */
-    text-align: center; /* توسيط النص */
-    transition: all 0.3s ease; /* تأثير التغيير */
-    background-color: transparent; /* خلفية شفافة افتراضيًا */
+  all: unset; /* إزالة جميع الأنماط الافتراضية */
+  color: #ff69b4;
+  font-size: 18px; /* حجم النص للزر */
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-flex; /* عرض مرن لتوسيط النص والأيقونة */
+  padding: 5px 10px; /* تقليل الحواف الداخلية */
+  border-radius: 5px; /* استدارة الحواف */
+  border: 1px solid #ff69b4; /* إطار صغير */
+  text-align: center; /* توسيط النص */
+  transition: all 0.3s ease; /* تأثير التغيير */
+  background-color: transparent; /* خلفية شفافة افتراضيًا */
 }
 
 .Reset > a:hover {
-    color: white; /* لون النص عند التمرير */
-    background-color: #ff69b4; /* تغيير لون الخلفية عند التمرير */
-    border-color: #ff85a2; /* تغيير لون الإطار عند التمرير */
+  color: white; /* لون النص عند التمرير */
+  background-color: #ff69b4; /* تغيير لون الخلفية عند التمرير */
+  border-color: #ff85a2; /* تغيير لون الإطار عند التمرير */
 }
 
 /* أيقونة Reset */
 .Reset .icon {
-    width: 16px; /* حجم الأيقونة */
-    height: 16px; /* حجم الأيقونة */
-    display: inline-block;
+  width: 16px; /* حجم الأيقونة */
+  height: 16px; /* حجم الأيقونة */
+  display: inline-block;
 }
 
 .Reset .icon img {
-    width: 100%; /* الأيقونة تتناسب مع الحاوية */
-    height: auto;
-    object-fit: contain; /* الحفاظ على نسبة العرض والارتفاع */
+  width: 100%; /* الأيقونة تتناسب مع الحاوية */
+  height: auto;
+  object-fit: contain; /* الحفاظ على نسبة العرض والارتفاع */
 }
 
-
-.block4{
-    grid-template-columns: repeat(4, 1fr);
+.block4 {
+  grid-template-columns: repeat(4, 1fr);
 }
-.block6{
-    grid-template-columns: repeat(6, 1fr);
+.block6 {
+  grid-template-columns: repeat(6, 1fr);
 }
-.block8{
-    grid-template-columns: repeat(8, 1fr);
+.block8 {
+  grid-template-columns: repeat(8, 1fr);
 }
 /* Memory Game Blocks */
 .memory-game-blocks {
-    display: grid;
-    /* grid-template-columns: repeat(8, 1fr); */
-    gap: 5px;
-    max-width: 450px;
-    margin: 10px auto;
-    padding: 5px;
+  display: grid;
+  /* grid-template-columns: repeat(8, 1fr); */
+  gap: 5px;
+  max-width: 450px;
+  margin: 10px auto;
+  padding: 5px;
 }
 /* الحته اللي تبع فانكشن ال ستوب */
-.memory-game-blocks.no-clicking
-{
-    pointer-events: none;
+.memory-game-blocks.no-clicking {
+  pointer-events: none;
 }
 
 .memory-game-blocks .game-block {
-    width: 100%;
-    height: 0;
-    padding-bottom: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
-    cursor: pointer;
-    border-radius: 10px;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  cursor: pointer;
+  border-radius: 10px;
 }
 
 .memory-game-blocks .game-block .face {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border: 5px solid #ff85a2be;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 5px solid #ff85a2be;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .memory-game-blocks .game-block .front {
-    background-color: #ffe6f0;
-    color: white;
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: #ffe6f0;
+  color: white;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .memory-game-blocks .game-block .back {
-    background-color: #ffc4d6;
-    transform: rotateY(180deg);
+  background-color: #ffc4d6;
+  transform: rotateY(180deg);
 }
 /*الحته اللي تبع فانكشن ال ماتشيب */
 .memory-game-blocks .game-block.is-flipped 
-/*, .memory-game-blocks .game-block.has-match  */
-{
-    -webkit-transform: rotateY(180deg);
-    -moz-transform:rotateY(180deg) ;
-    transform: rotateY(180deg);
+/*, .memory-game-blocks .game-block.has-match  */ {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.memory-game-blocks .game-block.is-flipped:hover,
+.back {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
-.memory-game-blocks .game-block.has-match 
-{
-    transform: rotateY(180deg);
-    pointer-events: none;
+.memory-game-blocks .game-block.has-match {
+  transform: rotateY(180deg);
+  pointer-events: none;
+  animation: mageic 0.8s;
+  position: relative;
+  z-index: 1;
 }
-
+@keyframes mageic {
+  0% {
+    box-shadow: 0 0 5px cyan, 0 0 5px cyan, 0 0 5px cyan, 0 0 100px cyan,
+      0 0 5px cyan;
+  }
+  100% {
+    box-shadow: 0 0 5px cyan, 0 0 5px cyan, 0 0 5px cyan, 0 0 100px cyan,
+      0 0 5px cyan;
+  }
+}
 
 .memory-game-blocks .game-block img {
-    width: 80%;
-    height: auto;
-    border-radius: 5px;
+  width: 80%;
+  height: auto;
+  border-radius: 5px;
 }
 
 .memory-game-blocks .game-block:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 /* حاوية البالونات */
 /* حاوية البالونات */
 .balloons-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 9999; /* أعلى من العناصر الأخرى */
-    pointer-events: none; /* لا تتداخل مع النقرات */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 9999; /* أعلى من العناصر الأخرى */
+  pointer-events: none; /* لا تتداخل مع النقرات */
+}
+
+/* تصميم البالونات */
+.balloon {
+  position: absolute;
+  bottom: -100px; /* تبدأ من خارج الشاشة */
+  width: 50px; /* عرض البالون */
+  height: 70px; /* ارتفاع البالون */
+  background: radial-gradient(
+    circle at 50% 30%,
+    #ff5f5f,
+    #ff2e2e 70%
+  ); /* لون متدرج */
+  border-radius: 50% 50% 60% 60%; /* شكل بيضاوي يناسب البالونات */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل ناعم */
+  animation: floatUp 6s linear infinite; /* حركة الصعود */
+}
+
+/* خيط البالون */
+.balloon::after {
+  content: "";
+  position: absolute;
+  bottom: -20px; /* خيط البالون يبدأ من الأسفل */
+  left: 50%;
+  width: 2px; /* عرض الخيط */
+  height: 50px; /* طول الخيط */
+  background: #555; /* لون الخيط */
+  transform: translateX(-50%);
+}
+
+/* حركة البالونات */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1); /* تبدأ بالحجم الطبيعي */
+    opacity: 1;
   }
-  
-  /* تصميم البالونات */
-  .balloon {
-    position: absolute;
-    bottom: -100px; /* تبدأ من خارج الشاشة */
-    width: 50px; /* عرض البالون */
-    height: 70px; /* ارتفاع البالون */
-    background: radial-gradient(circle at 50% 30%, #ff5f5f, #ff2e2e 70%); /* لون متدرج */
-    border-radius: 50% 50% 60% 60%; /* شكل بيضاوي يناسب البالونات */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل ناعم */
-    animation: floatUp 6s linear infinite; /* حركة الصعود */
+  50% {
+    transform: translateY(-50vh) scale(1.1); /* تكبر قليلاً أثناء الصعود */
   }
-  
-  /* خيط البالون */
-  .balloon::after {
-    content: '';
-    position: absolute;
-    bottom: -20px; /* خيط البالون يبدأ من الأسفل */
-    left: 50%;
-    width: 2px; /* عرض الخيط */
-    height: 50px; /* طول الخيط */
-    background: #555; /* لون الخيط */
-    transform: translateX(-50%);
+  100% {
+    transform: translateY(-100vh) scale(0.9); /* تصغر وتختفي */
+    opacity: 0;
   }
-  
-  /* حركة البالونات */
-  @keyframes floatUp {
-    0% {
-      transform: translateY(0) scale(1); /* تبدأ بالحجم الطبيعي */
-      opacity: 1;
-    }
-    50% {
-      transform: translateY(-50vh) scale(1.1); /* تكبر قليلاً أثناء الصعود */
-    }
-    100% {
-      transform: translateY(-100vh) scale(0.9); /* تصغر وتختفي */
-      opacity: 0;
-    }
-  }
-  
+}
+
 /* الخلفية الشفافة */
 .win-popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8); /* ظل داكن أكثر */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    visibility: hidden; /* مخفي في البداية */
-    opacity: 0;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* ظل داكن أكثر */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  visibility: hidden; /* مخفي في البداية */
+  opacity: 0;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 /* محتوى النافذة */
 .win-content {
-    background: linear-gradient(135deg, #ffdf5e, #ff825c, #ff61d2);
-    padding: 30px 50px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.5);
-    text-align: center;
-    animation: popupBounce 0.6s ease-out;
-    font-family: 'Comic Sans MS', cursive;
+  background: linear-gradient(135deg, #ffdf5e, #ff825c, #ff61d2);
+  padding: 30px 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(255, 182, 193, 0.5);
+  text-align: center;
+  animation: popupBounce 0.6s ease-out;
+  font-family: "Comic Sans MS", cursive;
 }
 
 /* تأثير ارتداد عند فتح النافذة */
 @keyframes popupBounce {
-    0% {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-    60% {
-        transform: scale(1.2);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* العنوان */
 .win-content h1 {
-    font-size: 2.5rem;
-    color: #ffffff;
-    margin-bottom: 15px;
-    text-shadow: 0px 0px 20px #ffdf5e, 0px 0px 40px #ff825c;
-    animation: textGlow 1.5s infinite alternate;
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+  text-shadow: 0px 0px 20px #ffdf5e, 0px 0px 40px #ff825c;
+  animation: textGlow 1.5s infinite alternate;
 }
 
 /* تأثير توهج النص */
 @keyframes textGlow {
-    0% {
-        text-shadow: 0 0 10px #ffdf5e, 0 0 20px #ff825c, 0 0 30px #ff61d2;
-    }
-    100% {
-        text-shadow: 0 0 20px #ffd700, 0 0 30px #ff6347, 0 0 40px #ff1493;
-    }
+  0% {
+    text-shadow: 0 0 10px #ffdf5e, 0 0 20px #ff825c, 0 0 30px #ff61d2;
+  }
+  100% {
+    text-shadow: 0 0 20px #ffd700, 0 0 30px #ff6347, 0 0 40px #ff1493;
+  }
 }
 
 /* النص */
 .win-content p {
-    font-size: 1.2rem;
-    color: #ffffff;
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 /* الزر */
 .win-content button {
-    background: linear-gradient(135deg, #4dffdb, #3ba9ff);
-    color: #fff;
-    border: none;
-    padding: 12px 25px;
-    font-size: 1.2rem;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: transform 0.2s ease, background 0.3s ease;
-    animation: buttonBounce 1.5s infinite;
+  background: linear-gradient(135deg, #4dffdb, #3ba9ff);
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+  animation: buttonBounce 1.5s infinite;
 }
 
 /* تأثير الزر عند المرور */
 .win-content button:hover {
-    background: linear-gradient(135deg, #3ba9ff, #4dffdb);
-    transform: scale(1.1);
+  background: linear-gradient(135deg, #3ba9ff, #4dffdb);
+  transform: scale(1.1);
 }
 
 /* تأثير اهتزاز الزر */
 @keyframes buttonBounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .bubbles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Keep it behind all other content */
-    overflow: hidden;
-    background: linear-gradient(to bottom, #F8BBD0, #46ACA3); /* Pink and cyan gradient */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Keep it behind all other content */
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    #f8bbd0,
+    #46aca3
+  ); /* Pink and cyan gradient */
 }
 
 /* Style individual bubbles */
 .bubbles span {
-    position: absolute;
-    bottom: -100px; /* Start below the viewport */
-    width: 20px;
-    height: 20px;
-    background-color: rgba(255, 255, 255, 0.5); /* Light semi-transparent bubbles */
-    border-radius: 50%;
-    animation: rise 8s infinite ease-in-out;
-    animation-delay: calc(-1s * var(--i)); /* Different start times */
+  position: absolute;
+  bottom: -100px; /* Start below the viewport */
+  width: 20px;
+  height: 20px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Light semi-transparent bubbles */
+  border-radius: 50%;
+  animation: rise 8s infinite ease-in-out;
+  animation-delay: calc(-1s * var(--i)); /* Different start times */
 }
 /* transperent background */
-.transperent-page{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(222, 126, 179, 0.5);
-    display: flex;
-    z-index: 9999;
-    justify-content: center;
-    align-items: center;
+.transperent-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(222, 126, 179, 0.5);
+  display: flex;
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
 }
-.close-btn{
-    width: 300px;
-    height: 150px;
-    padding: 10px;
-    background-color: #eebada;
-    border: none;
-    border-radius: 15px;
-    box-shadow:  0 4px 8px;
-    transition: 0.3s;
-    font-size: 30px;
-    color: #b44b6a;
-    font-style: italic;
-    cursor: pointer;
+.close-btn {
+  width: 300px;
+  height: 150px;
+  padding: 10px;
+  background-color: #eebada;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px;
+  transition: 0.3s;
+  font-size: 30px;
+  color: #b44b6a;
+  font-style: italic;
+  cursor: pointer;
 }
-.close-btn:hover{
-    transform: scale(1.1);
+.close-btn:hover {
+  transform: scale(1.1);
 }
 /* Animation for bubbles */
 @keyframes rise {
-    0% {
-        transform: translateY(0) scale(1); /* Start at the bottom, normal size */
-    }
-    50% {
-        transform: translateY(-50vh) scale(1.2); /* Rise halfway and slightly grow */
-    }
-    100% {
-        transform: translateY(-100vh) scale(0.8); /* Disappear at the top */
-        opacity: 0;
-    }
+  0% {
+    transform: translateY(0) scale(1); /* Start at the bottom, normal size */
+  }
+  50% {
+    transform: translateY(-50vh) scale(1.2); /* Rise halfway and slightly grow */
+  }
+  100% {
+    transform: translateY(-100vh) scale(0.8); /* Disappear at the top */
+    opacity: 0;
+  }
 }
 
 /* Create different sizes and positions */
-.bubbles span:nth-child(1) { left: 10%; width: 15px; height: 15px; background-color: #F8BBD0; --i: 0; }
-.bubbles span:nth-child(2) { left: 20%; width: 25px; height: 25px; background-color: #46ACA3; --i: 1; }
-.bubbles span:nth-child(3) { left: 30%; width: 10px; height: 10px; background-color: #F8BBD0; --i: 2; }
-.bubbles span:nth-child(4) { left: 40%; width: 20px; height: 20px; background-color: #46ACA3; --i: 3; }
-.bubbles span:nth-child(5) { left: 50%; width: 30px; height: 30px; background-color: #F8BBD0; --i: 4; }
-.bubbles span:nth-child(6) { left: 60%; width: 12px; height: 12px; background-color: #46ACA3; --i: 5; }
-.bubbles span:nth-child(7) { left: 70%; width: 18px; height: 18px; background-color: #F8BBD0; --i: 6; }
-.bubbles span:nth-child(8) { left: 80%; width: 22px; height: 22px; background-color: #46ACA3; --i: 7; }
-.bubbles span:nth-child(9) { left: 90%; width: 25px; height: 25px; background-color: #F8BBD0; --i: 8; }
+.bubbles span:nth-child(1) {
+  left: 10%;
+  width: 15px;
+  height: 15px;
+  background-color: #f8bbd0;
+  --i: 0;
+}
+.bubbles span:nth-child(2) {
+  left: 20%;
+  width: 25px;
+  height: 25px;
+  background-color: #46aca3;
+  --i: 1;
+}
+.bubbles span:nth-child(3) {
+  left: 30%;
+  width: 10px;
+  height: 10px;
+  background-color: #f8bbd0;
+  --i: 2;
+}
+.bubbles span:nth-child(4) {
+  left: 40%;
+  width: 20px;
+  height: 20px;
+  background-color: #46aca3;
+  --i: 3;
+}
+.bubbles span:nth-child(5) {
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #f8bbd0;
+  --i: 4;
+}
+.bubbles span:nth-child(6) {
+  left: 60%;
+  width: 12px;
+  height: 12px;
+  background-color: #46aca3;
+  --i: 5;
+}
+.bubbles span:nth-child(7) {
+  left: 70%;
+  width: 18px;
+  height: 18px;
+  background-color: #f8bbd0;
+  --i: 6;
+}
+.bubbles span:nth-child(8) {
+  left: 80%;
+  width: 22px;
+  height: 22px;
+  background-color: #46aca3;
+  --i: 7;
+}
+.bubbles span:nth-child(9) {
+  left: 90%;
+  width: 25px;
+  height: 25px;
+  background-color: #f8bbd0;
+  --i: 8;
+}
 #winPopup {
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  #winPopup.visible {
-    visibility: visible;
-    opacity: 1;
-  }
-  
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#winPopup.visible {
+  visibility: visible;
+  opacity: 1;
+}
