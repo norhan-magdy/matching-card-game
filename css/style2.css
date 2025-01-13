@@ -136,7 +136,7 @@ span {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Keep it behind everything */
+  z-index: -1;
   overflow: hidden;
   background: linear-gradient(to bottom, #f8bbd0, #46aca3);
 }

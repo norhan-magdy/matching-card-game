@@ -46,7 +46,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Keep it behind everything */
+  z-index: -1;
   overflow: hidden;
   background: linear-gradient(to bottom, #f8bbd0, #46aca3);
 }
@@ -301,13 +301,10 @@ a {
   background-color: #d596e1 !important;
 }
 
-/* تعديل الفقاعات الزخرفية */
-
 .bubbles .bubble {
   animation: scaleAnimation 4s ease-in-out infinite;
 }
 
-/* كود الأنيميشين لزيادة الحجم وتصغيره */
 @keyframes scaleAnimation {
   0% {
     transform: scale(1);
@@ -331,7 +328,6 @@ a {
   background-color: #fff59d;
 }
 
-/* إضافة تأخير عشوائي لكل فقاعة */
 .bubble:nth-child(1) {
   animation-delay: 0s;
 }
