@@ -120,12 +120,15 @@ function checkMatchingBlocks(firstBlock, secondBlock) {
     secondBlock.classList.add("has-match");
   } else {
     triesElement.innerHTML = parseInt(triesElement.innerHTML) + 1;
-
+    firstBlock.classList.add("is-error");
+    secondBlock.classList.add("is-error");
+    wrongAudio.currentTime = 0;
+    wrongAudio.play();
     setTimeout(() => {
-      wrongAudio.currentTime = 0;
-      wrongAudio.play();
-      firstBlock.classList.remove("is-flipped");
-      secondBlock.classList.remove("is-flipped");
+      // wrongAudio.currentTime = 0;
+      // wrongAudio.play();
+      firstBlock.classList.remove("is-flipped", "is-error");
+      secondBlock.classList.remove("is-flipped", "is-error");
     }, deuration);
   }
 }
