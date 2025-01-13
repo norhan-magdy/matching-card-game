@@ -1,7 +1,7 @@
 function transperentbackground() {
   let background = document.querySelector(".transperent-page");
   background.style.display = "none";
-  flipAllCardsTemporarily(2000);
+  flipAllCardsTemporarily(1000);
   startTimer();
 }
 const bubbleContainer = document.querySelector(".bubbles");
@@ -71,22 +71,14 @@ gameCards.forEach((card) => {
     flipBlock(gameBlock);
   });
 });
-
+//flipallcardsatthebeginnningofthegame
 function flipAllCardsTemporarily(duration) {
   const allBlocks = Array.from(blocksContainer.children);
-
-  // أضف الفليب لجميع الكروت
   allBlocks.forEach((block) => block.classList.add("is-flipped"));
-
-  // أزل الفليب بعد المدة المحددة
   setTimeout(() => {
     allBlocks.forEach((block) => block.classList.remove("is-flipped"));
   }, duration);
 }
-
-// استدعِ الدالة عند بدء اللعبة
-// flipAllCardsTemporarily(2000); // اقلب الكروت لمدة 3 ثوانٍ
-
 const flipAudio = new Audio("audio/flip.mp3");
 const wrongAudio = new Audio("audio/faliure.mp3");
 const successAudio = new Audio("audio/success.mp3");
@@ -128,15 +120,12 @@ function checkMatchingBlocks(firstBlock, secondBlock) {
     secondBlock.classList.add("has-match");
   } else {
     triesElement.innerHTML = parseInt(triesElement.innerHTML) + 1;
-    firstBlock.classList.add("is-error");
-    secondBlock.classList.add("is-error");
-    wrongAudio.currentTime = 0;
-    wrongAudio.play();
+
     setTimeout(() => {
-      // wrongAudio.currentTime = 0;
-      // wrongAudio.play();
-      firstBlock.classList.remove("is-flipped", "is-error");
-      secondBlock.classList.remove("is-flipped", "is-error");
+      wrongAudio.currentTime = 0;
+      wrongAudio.play();
+      firstBlock.classList.remove("is-flipped");
+      secondBlock.classList.remove("is-flipped");
     }, deuration);
   }
 }
@@ -145,10 +134,6 @@ function checkMatchingBlocks(firstBlock, secondBlock) {
 const timerElement = document.querySelector(".time");
 let seconds = 0;
 let interval;
-
-// function startGame() {
-//   startTimer();
-// }
 
 function startTimer() {
   interval = setInterval(() => {
@@ -163,64 +148,34 @@ function updateTimerDisplay() {
   timerElement.textContent = `Game Time: ${minutes}m ${remainingSeconds}s`;
 }
 
-// startGame();
-
-// Show win popup
-// function showWinPopup(message) {
-//   const popup = document.getElementById('winPopup');
-//   const messageElement = document.getElementById('winMessage');
-
-//   messageElement.textContent = message;
-//   popup.style.visibility = 'visible';
-//   popup.style.opacity = '1';
-// }
-
-// // Play again button functionality
-// document.getElementById('playAgainBtn').addEventListener('click', () => {
-//   location.reload(); // Reload the game
-// });
-
 function showWinPopup(message) {
   const popup = document.getElementById("winPopup");
   const messageElement = document.getElementById("winMessage");
-  const balloonsContainer = document.createElement("div"); // إنشاء حاوية البالونات
+  const balloonsContainer = document.createElement("div");
   balloonsContainer.classList.add("balloons-container");
   document.body.appendChild(balloonsContainer);
-
-  // إعداد رسالة الفوز
   messageElement.textContent = message;
-
-  // عرض نافذة التهنئة
   popup.style.visibility = "visible";
   popup.style.opacity = "1";
   document.getElementById("playAgainBtn").addEventListener("click", () => {
     location.reload(); // Reload the game
   });
-  // إنشاء البالونات
+  //creatingtheballons
   for (let i = 0; i < 20; i++) {
     const balloon = document.createElement("div");
     balloon.classList.add("balloon");
-
-    // تحديد موقع عشوائي
     balloon.style.left = Math.random() * 100 + "vw";
-    balloon.style.animationDuration = Math.random() * 2 + 3 + "s"; // مدة عشوائية
-    balloon.style.backgroundColor = getRandomColor(); // لون عشوائي
-
+    balloon.style.animationDuration = Math.random() * 2 + 3 + "s";
+    balloon.style.backgroundColor = getRandomColor();
     balloonsContainer.appendChild(balloon);
-
-    // إزالة البالونات بعد انتهاء الحركة
     balloon.addEventListener("animationend", () => {
       balloon.remove();
     });
   }
-
-  // إزالة حاوية البالونات بعد 5 ثوانٍ
   setTimeout(() => {
     balloonsContainer.remove();
   }, 20000);
 }
-
-// وظيفة للحصول على ألوان عشوائية
 function getRandomColor() {
   const colors = [
     "#ff5f5f",

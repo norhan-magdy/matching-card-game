@@ -1,3 +1,26 @@
+@media (max-width: 480px) {
+  .card-body {
+    margin: 5px;
+    justify-content: space-between;
+    font-size: 14px;
+  }
+
+  .first-instruction,
+  .seconed-instruction {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  img {
+    width: 80px;
+    height: 80px;
+  }
+  span {
+    font-size: 16px;
+  }
+  .header > h1 {
+    font-size: 22px;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -31,34 +54,6 @@ header > span > a {
   display: inline-block;
   font-size: 20px;
 }
-@media (max-width: 480px) {
-  .card-body {
-    /* flex-direction: column; */
-    margin: 5px;
-    justify-content: space-between;
-    font-size: 14px;
-  }
-
-  .first-instruction,
-  .seconed-instruction {
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  img {
-    width: 80px;
-    height: 80px;
-  }
-  span {
-    font-size: 16px;
-  }
-  .header > h1 {
-    font-size: 22px;
-  }
-}
-
-/* body {
-  background-color: #f8bbd0;
-} */
 
 .header {
   text-align: center;
@@ -69,48 +64,36 @@ header > span > a {
     rgb(218, 123, 139),
     yellow
   ); /* Gradient mix */
-  -webkit-background-clip: text; /* Clip the gradient to the text */
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; /* Make the text transparent to show the gradient */
-  font-size: 1.2rem; /* Adjust font size if necessary */
-  /* Make the header text bold */
+  font-size: 1.2rem;
 }
 
-/* .header :first-child{
-    color: #0f7367d9;
-} */
 .full-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #f7f3f0;
-  margin: 50px auto 0;
-  padding: 10px; /* Adjust padding for content */
+  margin: 40px auto 10px;
+  padding: 10px;
   border-radius: 20px;
-  max-width: 380px; /* Set a maximum width for the card */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  max-width: 380px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0, 0.2);
 }
 
 .card-body {
   display: flex;
-  /* flex-direction: column; */
-  /* border: 1px solid #cbcbcb; */
-  /* border: 3px solid #F8BBD0; */
   align-items: center;
   max-height: 70%;
-  /* background-color: #dbf1f0; */
   justify-content: center;
   gap: 15px;
-  /* padding-right: -200px; */
   background-color: linear-gradient(to bottom, #46aca3, #18615b);
-  /* margin-right: 100px;
-    margin-left: 100px;
-    margin-bottom: 50px;
-    border-radius: 15px; */
-  /* box-shadow: 4px 8px #ea96b43c ; */
 }
 .first-instruction {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 3px solid #F8BBD0; */
-  /* margin: 5px; */
   border-radius: 15px;
   padding: 10px;
 }
@@ -124,7 +107,6 @@ img:hover {
   transform: scale(1.1);
 }
 .first-instruction:first-child {
-  /* Gradient mix */
   background: linear-gradient(45deg, rgb(46, 160, 160), #a51830, yellow);
   -webkit-background-clip: text; /* Clip the gradient to the text */
   -webkit-text-fill-color: transparent;
@@ -137,10 +119,6 @@ span {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 3px solid #F8BBD0; */
-  /* margin: 5px; */
-  /* border-radius: 15px;
-    padding: 10px; */
 }
 .seconed-instruction > h2 {
   background: linear-gradient(45deg, rgb(46, 160, 160), rgb(197, 71, 92));
