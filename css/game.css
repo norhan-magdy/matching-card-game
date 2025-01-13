@@ -43,74 +43,71 @@ a {
 
 /* Info Container */
 .info-container {
-  width: calc(100% - 20px); /* العرض يعتمد على الشاشة مع تقليل الحواف */
-  max-width: 450px; /* أقصى عرض للحاوية */
-  margin: 10px auto; /* تمركز الحاوية في المنتصف */
+  width: calc(100% - 20px);
+  max-width: 450px;
+  margin: 10px auto;
   background-color: #fbeaf4;
-  padding: 15px 20px; /* حواف داخلية مناسبة */
-  font-size: 18px; /* ضبط حجم النص */
+  padding: 15px 20px;
+  font-size: 18px;
   border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* تحسين الظل */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border: 2px solid #ff85a2;
-  display: flex; /* لجعل العناصر بجانب بعضها */
-  justify-content: space-between; /* توزيع العناصر بشكل متساوٍ */
-  align-items: center; /* محاذاة العناصر عموديًا */
-  gap: 10px; /* مسافة بين العناصر */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }
-
-/* عناصر الوقت والمحاولات */
 .info-container .tries,
 .info-container .time {
-  font-size: 18px; /* حجم النص */
+  font-size: 18px;
   font-style: italic;
   color: #ff69b4;
   font-weight: bold;
   display: flex;
-  align-items: center; /* محاذاة النص والأيقونة عموديًا */
-  gap: 5px; /* مسافة صغيرة بين النص وأي أيقونة */
+  align-items: center;
+  gap: 5px;
 }
 
-/* زر Reset */
+/* Reset */
 .Reset {
-  display: flex; /* جعل الأيقونة والنص بجانب بعض */
-  align-items: center; /* محاذاة عموديًا */
-  gap: 5px; /* مسافة صغيرة بين الأيقونة والنص */
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 .tries > span {
   font-size: 18px;
 }
 .Reset > a {
-  all: unset; /* إزالة جميع الأنماط الافتراضية */
+  all: unset;
   color: #ff69b4;
-  font-size: 18px; /* حجم النص للزر */
+  font-size: 18px;
   font-weight: bold;
   cursor: pointer;
-  display: inline-flex; /* عرض مرن لتوسيط النص والأيقونة */
-  padding: 5px 10px; /* تقليل الحواف الداخلية */
-  border-radius: 5px; /* استدارة الحواف */
-  border: 1px solid #ff69b4; /* إطار صغير */
-  text-align: center; /* توسيط النص */
-  transition: all 0.3s ease; /* تأثير التغيير */
-  background-color: transparent; /* خلفية شفافة افتراضيًا */
+  display: inline-flex;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ff69b4;
+  text-align: center;
+  transition: all 0.3s ease;
+  background-color: transparent;
 }
 
 .Reset > a:hover {
-  color: white; /* لون النص عند التمرير */
-  background-color: #ff69b4; /* تغيير لون الخلفية عند التمرير */
-  border-color: #ff85a2; /* تغيير لون الإطار عند التمرير */
+  color: white;
+  background-color: #ff69b4;
+  border-color: #ff85a2;
 }
 
-/* أيقونة Reset */
 .Reset .icon {
-  width: 16px; /* حجم الأيقونة */
-  height: 16px; /* حجم الأيقونة */
+  width: 16px;
+  height: 16px;
   display: inline-block;
 }
 
 .Reset .icon img {
-  width: 100%; /* الأيقونة تتناسب مع الحاوية */
+  width: 100%;
   height: auto;
-  object-fit: contain; /* الحفاظ على نسبة العرض والارتفاع */
+  object-fit: contain;
 }
 
 .block4 {
@@ -122,16 +119,13 @@ a {
 .block8 {
   grid-template-columns: repeat(8, 1fr);
 }
-/* Memory Game Blocks */
 .memory-game-blocks {
   display: grid;
-  /* grid-template-columns: repeat(8, 1fr); */
   gap: 5px;
   max-width: 450px;
   margin: 10px auto;
   padding: 5px;
 }
-/* الحته اللي تبع فانكشن ال ستوب */
 .memory-game-blocks.no-clicking {
   pointer-events: none;
 }
@@ -175,9 +169,7 @@ a {
   background-color: #ffc4d6;
   transform: rotateY(180deg);
 }
-/*الحته اللي تبع فانكشن ال ماتشيب */
-.memory-game-blocks .game-block.is-flipped 
-/*, .memory-game-blocks .game-block.has-match  */ {
+.memory-game-blocks .game-block.is-flipped {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   transform: rotateY(180deg);
@@ -192,11 +184,11 @@ a {
 .memory-game-blocks .game-block.has-match {
   transform: rotateY(180deg);
   pointer-events: none;
-  animation: mageic 0.8s;
+  animation: magic 0.8s;
   position: relative;
   z-index: 1;
 }
-@keyframes mageic {
+@keyframes magic {
   0% {
     box-shadow: 0 0 5px cyan, 0 0 5px cyan, 0 0 5px cyan, 0 0 100px cyan,
       0 0 5px cyan;
@@ -216,8 +208,6 @@ a {
 .memory-game-blocks .game-block:hover {
   transform: scale(1.05);
 }
-/* حاوية البالونات */
-/* حاوية البالونات */
 .balloons-container {
   position: fixed;
   top: 0;
@@ -225,71 +215,61 @@ a {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: 9999; /* أعلى من العناصر الأخرى */
-  pointer-events: none; /* لا تتداخل مع النقرات */
+  z-index: 9999;
+  pointer-events: none;
 }
 
-/* تصميم البالونات */
 .balloon {
   position: absolute;
-  bottom: -100px; /* تبدأ من خارج الشاشة */
-  width: 50px; /* عرض البالون */
-  height: 70px; /* ارتفاع البالون */
-  background: radial-gradient(
-    circle at 50% 30%,
-    #ff5f5f,
-    #ff2e2e 70%
-  ); /* لون متدرج */
-  border-radius: 50% 50% 60% 60%; /* شكل بيضاوي يناسب البالونات */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل ناعم */
-  animation: floatUp 6s linear infinite; /* حركة الصعود */
+  bottom: -100px;
+  width: 50px;
+  height: 70px;
+  background: radial-gradient(circle at 50% 30%, #ff5f5f, #ff2e2e 70%);
+  border-radius: 50% 50% 60% 60%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: floatUp 6s linear infinite;
 }
 
-/* خيط البالون */
 .balloon::after {
   content: "";
   position: absolute;
-  bottom: -20px; /* خيط البالون يبدأ من الأسفل */
+  bottom: -20px;
   left: 50%;
-  width: 2px; /* عرض الخيط */
-  height: 50px; /* طول الخيط */
-  background: #555; /* لون الخيط */
+  width: 2px;
+  height: 50px;
+  background: #555;
   transform: translateX(-50%);
 }
 
-/* حركة البالونات */
 @keyframes floatUp {
   0% {
-    transform: translateY(0) scale(1); /* تبدأ بالحجم الطبيعي */
+    transform: translateY(0) scale(1);
     opacity: 1;
   }
   50% {
-    transform: translateY(-50vh) scale(1.1); /* تكبر قليلاً أثناء الصعود */
+    transform: translateY(-50vh) scale(1.1);
   }
   100% {
-    transform: translateY(-100vh) scale(0.9); /* تصغر وتختفي */
+    transform: translateY(-100vh) scale(0.9);
     opacity: 0;
   }
 }
 
-/* الخلفية الشفافة */
 .win-popup {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8); /* ظل داكن أكثر */
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  visibility: hidden; /* مخفي في البداية */
+  visibility: hidden;
   opacity: 0;
   transition: opacity 0.5s ease, visibility 0.5s ease;
 }
-
-/* محتوى النافذة */
 .win-content {
   background: linear-gradient(135deg, #ffdf5e, #ff825c, #ff61d2);
   padding: 30px 50px;
@@ -299,8 +279,6 @@ a {
   animation: popupBounce 0.6s ease-out;
   font-family: "Comic Sans MS", cursive;
 }
-
-/* تأثير ارتداد عند فتح النافذة */
 @keyframes popupBounce {
   0% {
     transform: scale(0.5);
@@ -314,8 +292,6 @@ a {
     transform: scale(1);
   }
 }
-
-/* العنوان */
 .win-content h1 {
   font-size: 2.5rem;
   color: #ffffff;
@@ -323,8 +299,6 @@ a {
   text-shadow: 0px 0px 20px #ffdf5e, 0px 0px 40px #ff825c;
   animation: textGlow 1.5s infinite alternate;
 }
-
-/* تأثير توهج النص */
 @keyframes textGlow {
   0% {
     text-shadow: 0 0 10px #ffdf5e, 0 0 20px #ff825c, 0 0 30px #ff61d2;
@@ -333,16 +307,12 @@ a {
     text-shadow: 0 0 20px #ffd700, 0 0 30px #ff6347, 0 0 40px #ff1493;
   }
 }
-
-/* النص */
 .win-content p {
   font-size: 1.2rem;
   color: #ffffff;
   margin-bottom: 20px;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
-
-/* الزر */
 .win-content button {
   background: linear-gradient(135deg, #4dffdb, #3ba9ff);
   color: #fff;
@@ -354,14 +324,10 @@ a {
   transition: transform 0.2s ease, background 0.3s ease;
   animation: buttonBounce 1.5s infinite;
 }
-
-/* تأثير الزر عند المرور */
 .win-content button:hover {
   background: linear-gradient(135deg, #3ba9ff, #4dffdb);
   transform: scale(1.1);
 }
-
-/* تأثير اهتزاز الزر */
 @keyframes buttonBounce {
   0%,
   100% {
@@ -378,32 +344,20 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Keep it behind all other content */
+  z-index: -1;
   overflow: hidden;
-  background: linear-gradient(
-    to bottom,
-    #f8bbd0,
-    #46aca3
-  ); /* Pink and cyan gradient */
+  background: linear-gradient(to bottom, #f8bbd0, #46aca3);
 }
-
-/* Style individual bubbles */
 .bubbles span {
   position: absolute;
-  bottom: -100px; /* Start below the viewport */
+  bottom: -100px;
   width: 20px;
   height: 20px;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.5
-  ); /* Light semi-transparent bubbles */
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   animation: rise 8s infinite ease-in-out;
-  animation-delay: calc(-1s * var(--i)); /* Different start times */
+  animation-delay: calc(-1s * var(--i));
 }
-/* transperent background */
 .transperent-page {
   position: fixed;
   top: 0;
@@ -433,21 +387,19 @@ a {
 .close-btn:hover {
   transform: scale(1.1);
 }
-/* Animation for bubbles */
+
 @keyframes rise {
   0% {
-    transform: translateY(0) scale(1); /* Start at the bottom, normal size */
+    transform: translateY(0) scale(1);
   }
   50% {
-    transform: translateY(-50vh) scale(1.2); /* Rise halfway and slightly grow */
+    transform: translateY(-50vh) scale(1.2);
   }
   100% {
-    transform: translateY(-100vh) scale(0.8); /* Disappear at the top */
+    transform: translateY(-100vh) scale(0.8);
     opacity: 0;
   }
 }
-
-/* Create different sizes and positions */
 .bubbles span:nth-child(1) {
   left: 10%;
   width: 15px;
