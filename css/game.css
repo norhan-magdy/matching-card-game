@@ -198,15 +198,40 @@ a {
 }
 @keyframes mageic {
   0% {
-    box-shadow: 0 0 5px cyan, 0 0 5px cyan, 0 0 5px cyan, 0 0 100px cyan,
-      0 0 5px cyan;
+    box-shadow: 0 0 5px pink, 0 0 10px pink, 0 0 15px hotpink, 0 0 20px pink,
+      0 0 5px hotpink;
+  }
+  50% {
+    box-shadow: 0 0 10px hotpink, 0 0 15px hotpink, 0 0 20px pink,
+      0 0 30px hotpink, 0 0 10px pink;
   }
   100% {
-    box-shadow: 0 0 5px cyan, 0 0 5px cyan, 0 0 5px cyan, 0 0 100px cyan,
-      0 0 5px cyan;
+    box-shadow: 0 0 5px pink, 0 0 10px pink, 0 0 15px hotpink, 0 0 20px pink,
+      0 0 5px hotpink;
   }
 }
-
+/* design chiking */
+.memory-game-blocks .game-block.is-error {
+  transform: rotateY(180deg);
+  pointer-events: none;
+  animation: mageic2 0.8s;
+  position: relative;
+  z-index: 1;
+}
+@keyframes mageic2 {
+  0% {
+    box-shadow: 0 0 5px red, 0 0 5px red, 0 0 5px darkred, 0 0 5px red,
+      0 0 5px darkred;
+  }
+  50% {
+    box-shadow: 0 0 5px darkred, 0 0 5px darkred, 0 0 5px red, 0 0 10px darkred,
+      0 0 10px red;
+  }
+  100% {
+    box-shadow: 0 0 5px red, 0 0 5px red, 0 0 5px darkred, 0 0 10px red,
+      0 0 5px darkred;
+  }
+}
 .memory-game-blocks .game-block img {
   width: 80%;
   height: auto;
